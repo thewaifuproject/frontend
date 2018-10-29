@@ -1,0 +1,8 @@
+body{
+    background: #ebebeb
+}
+
+.gallery {
+    grid-template-columns: 25% 40% auto;
+    grid-auto-rows: auto;
+}

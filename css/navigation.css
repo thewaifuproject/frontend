@@ -1,0 +1,131 @@
+html, body { 
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  
+  /* The side navigation menu */
+  .sidenav {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #111; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    color: #fff;    
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    background-color: #2b2b2b; 
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  button { 
+    cursor: pointer;
+  }
+  
+  #main {
+    transition: left .5s;
+  }
+  
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  
+  .btn-burger {
+    display: block;
+    cursor: pointer;
+    padding: 8px;
+    padding-top: 15px;
+  }
+    
+  .btn-burger .bar {
+    width: 30px;
+    height: 5px;
+    background: #fff;
+    margin-bottom: 5px;
+  }
+  
+.btn-burger:last-child {margin-bottom: 0px;}
+
+
+.verticaltext {
+    color: inherit;
+    font-weight: bold;
+    /*letter-spacing: 0.28rem;*/
+    text-transform: uppercase;
+    text-decoration: none;
+    position: absolute;
+    top: 45%;
+    padding-left: 5.5px !important;
+    transform: rotate(-90deg) translateY(-6rem);
+    transform-origin: right top;
+}
+
+
+
+.animeslist{
+    list-style: none;
+    margin:0; 
+    padding:0;
+}
+
+.animeslist > li{
+    color: #818181;
+    padding: 10px;
+    padding-left: 35px;
+}
+
+.animeslist > li:hover{
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+    padding-left: 45px;
+}
+
+.wmenu{
+    display: none;
+}
+
+.wmenu-active{
+    display: block;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .verticaltext {
+    z-index: 99;
+    color: inherit;
+    font-weight: bold;
+    /* letter-spacing: 0.28rem; */
+    text-transform: uppercase;
+    text-decoration: none;
+    position: auto;
+    top: auto;
+    padding-left:auto !important;
+    transform: auto;
+    transform-origin: auto;
+}
+}
