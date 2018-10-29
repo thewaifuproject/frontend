@@ -17,7 +17,7 @@ html, body {
   }
   
   /* The navigation menu links */
-  .sidenav a {
+  .sidenav > a {
     color: #fff;    
     padding: 8px 8px 8px 8px;
     text-decoration: none;
@@ -27,8 +27,9 @@ html, body {
   }
   
   /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
+  .sidenav > a:hover {
     background-color: #2b2b2b; 
+    cursor: pointer;
   }
   
   /* Position and style the close button (top right corner) */
@@ -46,9 +47,15 @@ html, body {
   
   #main {
     transition: left .5s;
+    transition: .5s ease-in-out;
   }
   
-  
+  .main-open {
+    transform: translate(250px,0);
+  }
+  .main-closed {
+    transform: translate(0px,0);
+  }
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
@@ -86,19 +93,20 @@ html, body {
 
 
 
-.animeslist{
+.animeslist, .animeslist *{
+    text-decoration: none;
     list-style: none;
     margin:0; 
     padding:0;
 }
 
-.animeslist > li{
+.animeslist *{
     color: #818181;
     padding: 10px;
     padding-left: 35px;
 }
 
-.animeslist > li:hover{
+.animeslist > li:hover, .animeslist li:hover{
     cursor: pointer;
     color: #fff;
     padding: 10px;

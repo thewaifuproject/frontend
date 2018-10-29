@@ -67,6 +67,10 @@ h1 {
     justify-content: center;
 }
 
+.shop:focus, .main:focus{
+    outline: none;
+}
+
 .gallery {
     margin: 20px;
     display: grid;
