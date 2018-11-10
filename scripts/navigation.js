@@ -1,23 +1,46 @@
 function openNav() {
+  if(window.innerWidth>600){
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.left = "250px";
     document.getElementById("main").style.width = "calc(100% - 250px)";
-    document.body.style.backgroundColor = "#584678"//"rgba(0,0,0,0.4)";
+  } else {
+    document.getElementById("mySidenav").style.height = "100%";
+    document.getElementById("mySidenav").style.width = "100%";
+    document.getElementById("mySidenav").style.width = "100%";
+    document.getElementById("mySidenav").style.opacity= "1";
+    document.getElementById("mySidenav").style.pointerEvents = "auto";
+    console.log("ee")
+    //document.getElementById("mySidenav").style.display= "block";
+  }
+  document.body.style.backgroundColor = "#584678"//"rgba(0,0,0,0.4)";
 
-    var element = document.getElementById("main");
-    element.classList.remove("main-closed");
-    element.classList.add("main-active");
+  /*var element = document.getElementById("main");
+  element.classList.remove("main-closed");
+  element.classList.add("main-active");*/
 }
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("mySidenav").style.width = "0";
+  if(window.innerWidth>600){
     document.getElementById("main").style.left = "50px";
     document.getElementById("main").style.width = "calc(100% - 50px)";
-    document.body.style.backgroundColor = "#000"//"white";
-   
-    var element = document.getElementById("main");
-    element.classList.remove("main-open");
-    element.classList.add("main-closed");
+  }
+  else{
+    document.getElementById("main").style.left = "0px";
+    document.getElementById("main").style.width = "100%";
+    document.getElementById("mySidenav").style.height = "0%";
+    document.getElementById("mySidenav").style.width = "100%";
+    document.getElementById("mySidenav").style.top= "0px";
+    document.getElementById("mySidenav").style.opacity= "0";
+    document.getElementById("mySidenav").style.pointerEvents = "none";
+    //document.getElementById("mySidenav").style.display= "none";
+  }
+
+  document.body.style.backgroundColor = "#000"//"white";
+  
+  var element = document.getElementById("main");
+  element.classList.remove("main-open");
+  element.classList.add("main-closed");
 }
 
 $('document').ready(function(){

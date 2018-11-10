@@ -24,7 +24,7 @@ body {
     
 }
 
-aside {
+nav {
     position: fixed;
     /*background: #171717;*/
     background-color: #000;
@@ -32,6 +32,7 @@ aside {
     width: 50px;
     color: white;
     overflow-y: auto;
+    z-index: 100;
 }
 
 h1 {
@@ -160,7 +161,7 @@ a.button1:hover{
         left: 0px;
         width: 100%;
     }
-    aside {
+    nav {
         position: fixed;
         /* background: #171717; */
         background-color: #000;
