@@ -6,3 +6,67 @@ body{
     grid-template-columns: 25% 40% auto;
     grid-auto-rows: auto;
 }
+
+.bid {
+    margin: 5%;
+    height: 95%;
+    width: 90%;
+}
+
+.alert {
+    margin: 20px;
+    padding: 20px;
+    background-color: #e9e9e9;
+    color: black;
+}
+
+.alert:hover {
+    padding: 20px;
+    background-color: #715c97;
+    color: white;
+    cursor: context-menu;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+ul {
+    background:#e9e9e9;
+    height: 800px;
+    overflow: auto;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-color: #000;
+    border-style: solid;
+}
+
+h1 {
+    color: #111;
+    font-family: 'Helvetica Neue',
+    sans-serif; font-size: 30px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
+}
+
+#cuenta {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 0px;
+  }
+
+  #logo{
+    height: 200px;
+
+    width: 200px;
+}
