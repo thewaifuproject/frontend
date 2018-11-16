@@ -1,0 +1,191 @@
+html, body, section, h1, img, nav, button, a{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.background img {
+    opacity: 0.5;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#s1{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(../images/design/purple.png);
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url("https://waifuchain.moe/images/design/purple.png");
+    height: 100vh
+}
+
+#section1{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(../images/design/purple.png);
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url("https://images6.alphacoders.com/845/thumb-1920-845183.png");
+    height: 100vh
+}
+
+#section2{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(../images/design/purple.png);
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url("https://i.pinimg.com/originals/14/80/33/148033908ecfd3c20da2f4afc3467f82.png");
+    height: 100vh
+}
+
+#section3{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(../images/design/purple.png);
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url("https://img.fireden.net/a/image/1514/38/1514380874544.png");
+    height: 100vh
+}
+
+.bgimages-item{
+    min-width: 100%;
+    height: 100vh;
+    
+    z-index: -1;
+}
+
+/*.bgimages-item:nth-child(1){
+    transform: translate(400%,0);
+}
+
+.bgimages-item:nth-child(2){
+    transform: translate(200%,0);
+}
+.bgimages-item:nth-child(3){
+    transform: translate(100%,0);
+}
+.bgimages-item:nth-child(4){
+    transform: translate(0%,0%);
+}*/
+
+nav {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 1px 15px #000;
+    z-index: 1500;
+}
+
+nav > .brand {
+    float: left;
+    padding: 14px 16px;
+    font-size: 1.3em;
+}
+
+.brand > a {
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav > .menu {
+    float: right;
+    padding: 14px 16px;
+    font-size: 1.3em;
+}
+
+.menu > a{
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu > button {
+    padding: 0px 16px;
+}
+
+nav .menu > a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.card{
+    background: #fff;
+    height: 50%;
+    width: 50%;
+    padding: 35px;
+    border-radius: 0px;
+    opacity: 0.9;
+    box-shadow: 3px 3px 6px 0px #000;
+}
+
+.card h1{
+    color: black;
+}
+
+.maint{
+    height: 50%;
+    width: 50%;
+    transform: translate(-30%,10%);
+}
+
+h1{
+    color: white;
+    font-size: 4em;
+}
+
+h2{
+    color: black;
+    font-size: 2em;
+}
+
+.maint button{
+    margin: 3em;
+    margin-right: 0px;
+    top: 5em;
+    width: 15em;
+    height: 5em;
+}
+
+.test {
+    background: blue;
+    z-index: 10;
+}
+
+#sec1 {
+    transform: translate(35%, 0%)
+}
+
+#sec2 {
+    transform: translate(-25%, 0%)
+}
