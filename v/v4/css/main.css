@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
 html, body, section, h1, img, nav, button, a{
     margin: 0px;
     padding: 0px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
     overflow-x: hidden;
+    background: url("https://www.google.es/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwin8Ou-kNreAhVDhxoKHQOAA4oQjRx6BAgBEAU&url=https%3A%2F%2Fwww.123rf.com%2Fphoto_81964032_stock-vector-seamless-pattern-ethereum-on-a-white-background.html&psig=AOvVaw01krNDZWlQ0UpMPT3qhy0-&ust=1542499442343402");
+    background-repeat: repeat; 
 }
 
 .background img {
@@ -23,6 +28,10 @@ section {
     height: 100vh;
     position: fixed;
     z-index: -1;
+}
+
+#b2{
+    min-width: auto;
 }
 
 .bgimages-item:nth-child(1){
@@ -44,14 +53,17 @@ nav {
     overflow: hidden;
     width: 100%;
     background-color: #fff;
-    box-shadow: 0px 1px 15px #000;
-    z-index: 1500;
+    box-shadow: 0px 1px 10px #000;
+    z-index: 1500;    
+    font-weight: bold;
 }
 
 nav > .brand {
     float: left;
     padding: 14px 16px;
     font-size: 1.3em;
+    margin-left: 50px;
+    margin-top: 12px;
 }
 
 .brand > a {
@@ -59,6 +71,10 @@ nav > .brand {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+.brand > img {
+    width: 20px;
 }
 
 nav > .menu {
@@ -75,7 +91,16 @@ nav > .menu {
 }
 
 .menu > button {
-    padding: 0px 16px;
+    padding: 8px 32px;
+    border-radius: 3px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.menu > button:hover {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #5a547b;
 }
 
 nav .menu > a:hover {
@@ -114,11 +139,12 @@ h2{
 }
 
 .maint button{
-    margin: 3em;
-    margin-right: 0px;
     top: 5em;
     width: 15em;
     height: 5em;
+    color: #000;
+    background: rgb(255, 255, 255);
+    border-color: #000;
 }
 
 .test {
@@ -132,4 +158,19 @@ h2{
 
 #sec2 {
     transform: translate(-25%, 0%)
+}
+
+button {
+    background-color: #5a547b;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+    border: 2px solid #5a547b;
 }
