@@ -1,15 +1,41 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 
-html, body, section, h1, img, nav, button, a{
+html, body, section, h1, img, nav, button, a, div{
     margin: 0px;
     padding: 0px;
     font-family: 'Open Sans', sans-serif;
 }
 
-body {
+img, div{
+    border: none;
+}
+
+#bgg1 {
+    position: fixed;
     overflow-x: hidden;
-    background: url("https://www.google.es/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwin8Ou-kNreAhVDhxoKHQOAA4oQjRx6BAgBEAU&url=https%3A%2F%2Fwww.123rf.com%2Fphoto_81964032_stock-vector-seamless-pattern-ethereum-on-a-white-background.html&psig=AOvVaw01krNDZWlQ0UpMPT3qhy0-&ust=1542499442343402");
-    background-repeat: repeat; 
+    background: url('../images/ethlogo_bw.png');
+    background-position: center;
+    background-size: 50%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    z-index: -9;
+}
+
+#bgg2 {
+    position: fixed;
+    overflow-x: hidden;
+    background: url('../images/ethlogo.png');
+    background-position: center;
+    background-size: 50%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    z-index: -9;
+    transition: opacity 1000ms linear;
+    opacity: 0;
 }
 
 .background img {
@@ -49,6 +75,7 @@ section {
 }
 
 nav {
+    top: 0;
     position: fixed;
     overflow: hidden;
     width: 100%;
@@ -56,6 +83,7 @@ nav {
     box-shadow: 0px 1px 10px #000;
     z-index: 1500;    
     font-weight: bold;
+    transition: background-color 1000ms linear;
 }
 
 nav > .brand {
@@ -67,7 +95,7 @@ nav > .brand {
 }
 
 .brand > a {
-    color: #000;
+    color: inherit;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -84,7 +112,7 @@ nav > .menu {
 }
 
 .menu > a{
-    color: #000;
+    color: inherit;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -109,17 +137,18 @@ nav .menu > a:hover {
 }
 
 .card{
-    background: #fff;
+    background: #584678;
     height: 50%;
     width: 50%;
     padding: 35px;
     border-radius: 0px;
     opacity: 0.9;
     box-shadow: 3px 3px 6px 0px #000;
+    z-index: 5;
 }
 
-.card h1{
-    color: black;
+.card h3, p{
+    color: white;
 }
 
 .maint{
@@ -173,4 +202,39 @@ button {
     cursor: pointer;
     
     border: 2px solid #5a547b;
+}
+
+#b1{
+    background: #584678;
+}
+
+#b2{
+    background: linear-gradient(to right, #584678 0%,#584678 23%,rgba(255,255,255,0) 24%,rgba(255,255,255,0) 100%);
+    /*background: url('../images/blue left.png') center center / contain no-repeat;
+    width: 100%;
+    z-index: 9;
+    */
+    transform: translate(1.54489%, 0%);
+}
+/*
+#db2{
+    background: linear-gradient(to right, #584678 0%, #584678 25%,#ffffff 25%,#ffffff 100%);
+}
+
+#b3{
+    background: url('../images/purplehairright.png') center center / contain no-repeat;
+    width: 100%;
+    transform: translate(1.54489%, 0%);
+    z-index: 9;
+}
+
+#b4{
+    background: url('../images/blue right.png') center center / contain no-repeat;
+    width: 100%;
+    transform: translate(1.54489%, 0%);
+    z-index: 9;
+}*/
+
+#b4{
+    background: linear-gradient(to left, #cdc2be 0%,#cdc2be 23%,rgba(255,255,255,0) 24%,rgba(255,255,255,0) 100%);
 }
