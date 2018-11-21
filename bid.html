@@ -1,194 +1,27 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8"/>
-		<title>WaifuChain</title>
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
-		<link rel="icon" type="image/png" href="favicon.png" />
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
+<head>
+    <meta charset="utf-8" />
+    <title>WaifuCHAIN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="js/main.js"></script>
+</head>
+<body onload="main()">
 
-		<link rel="stylesheet" type="text/css" href="css/parallax.css">
+    <nav id="nav">
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="bid.html">Bid</a>
+            <a href="faq.html">FAQs</a>
+            <a href="https://discordapp.com/invite/ykrT4bw" target="_blank">Discord</a>
+            <button onclick="document.location.href=this.getAttribute('href');" href="tutorial.html">Start</button>
+        </div>
+        <div class="brand">
+            <img src="https://waifuchain.moe/favicon.png">
+            <a href="#home">WAIFUCHAIN</a>
+        </div>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-		<!--Navigation-->
-		<link rel="stylesheet" type="text/css" href="css/navigation.css">
-		<script src="scripts/navigation.js"></script>
-
-		<!-- for bubbles -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    	<script src="https://benahm.github.io/jquery.throwable/javascripts/jquery.throwable.js"></script>
-		<script src="scripts/bubble.js"></script>
-		<script src="scripts/bid.js"></script>
-		
-		<link rel="stylesheet" type="text/css" href="css/bid.css">
-	</head>
-	<body>
-		<nav>
-			<div class="btn-burger" onclick="openNav()">
-					<div class="bar"></div>
-						<div class="bar"></div>
-					<div class="bar"></div>
-			</div>
-			
-			<a class="verticaltext" href="#link">WAIFUCHAIN</a>
-			<div id="mySidenav" class="sidenav">
-				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-				<a href="#">HOME</a>
-				<a id="waifusmenu" href="#shop">WAIFUS</a>
-				<div class="wmenu">
-					<ul class="animeslist">
-							<li value="All">All (24)</li>
-							<li value="Eva">Evangelion</li>
-							<li value="Fate">Fate</li>
-							<li value="Nep">Hyperdimension Neptunia</li>
-							<li value="Maiddragon">Kobayashi-san Chi no Maid Dragon</li>
-							<li value="Madoka">Mahou Shoujo Madoka Magica</li>
-							<li value="Gatari">
-								Monogatari
-							</li>
-							<li value="Nekopara">
-								Nekopara
-							</li>
-							<li value="NHK">
-								NHK ni Youkoso!
-							</li>
-							<li value="Prison">
-								Prison School
-							</li>
-							<li value="Rezero">
-								Re:Zero
-							</li>
-							<li value="Sword">
-								Sword Art Online
-							</li>
-							<li value="Zelda">
-								The Legend of Zelda: Breath of the Wild
-							</li>
-							<li value="Railgun">
-								Toaru Kagaku no Railgun
-							</li>
-							<li value="Vocaloid">
-								Vocaloid
-							</li>
-						</ul>
-				</div>
-				<a href="#">MY WAIFUS</a>
-				<a href="#">CONTRACT</a>
-				<br><br><br><br><br><br><br>
-			</div>
-		</nav>
-		<div id="main" class="main">
-			<div class="gallery">
-				<div class="card">
-					<img src="images/waifu.jpg" alt="Avatar">
-					<div class="container">
-						<b>John Doe</b>
-						<p>Lorem Ipsum és un text de farciment usat per la indústria de la tipografia i la impremta. Lorem Ipsum ha estat el text estàndard de la indústria des de l'any 1500, quan un impressor desconegut va fer servir una galerada de text i la va mesclar per crear un llibre de mostres tipogràfiques. </p>
-						<a id="test" href="#" class="button1 start-g" onclick="createskin()">Test it!</a>
-						<a href="#" class="button1">0.25ETH</a>
-					</div>
-				</div>
-				<div class="card" style="width:100%;">
-					<!--<br>
-					<h1>ACTUAL PRICE</h1>
-					<h2>0.23ETH</h2>
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					<img id="logo" src="https://crypto-waifus.com/assets/images/m2.png">
-					
-					<a id="test" href="#" class="button1 start-g">BID!</a>-->
-				</div>
-				<div class="card" style="width:100%;">
-					<div class="bid">
-						<ul>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							<li>
-									<div class="alert">
-											0x22c294bbf61c3c60a5271d245ac8c620c438e0e4 has bid 0.23ETH
-										  </div>
-							</li>
-							
-						</ul>
-						<h1>Ends:</h1>
-						<p id="cuenta"></p>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-	</body>
+    </nav>
+</body>
 </html>
