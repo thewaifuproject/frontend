@@ -73,3 +73,16 @@ function hideMenu(){
     document.getElementById('menu-icon-lines').style.display = 'initial'
     document.getElementById('menu-icon-close').style.display = 'none'
 }
+
+function socialDiscordOpen() {
+    console.log("open");
+    
+    document.getElementById('discord-text').style.display = 'initial';
+    document.getElementById('discord-text').style.opacity = '1';
+}   
+
+function socialDiscordClose() {
+    console.log("close")
+    document.getElementById('discord-text').style.display = 'none';
+    document.getElementById('discord-text').style.opacity = '0';
+}   
