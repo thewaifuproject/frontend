@@ -60,5 +60,22 @@ function displayWaifusOnAuction(waifus){
 	// Build structure
 	waifus.forEach((waifu)=>{
 		//Fill structure
-	}
+	})
+}
+
+function insertCard(waifu) {
+	let imgUrl = "https://api.waifuchain.moe/image/0.jpeg"
+	let name = "Mikan Yuuki"
+	let card = 	'<div class="flex-item">'+
+					'<div class="waifuCard">' + 
+						'<div id="ima">'+
+						'<img src="'+imgUrl + '">' + 
+						'<span class="assign">'+name+'</span>'+
+						'</div>'+
+						'<p>'+name+'</p>'+
+						'<button class="buttonlight">Get one</button>'+
+					'</div>'+
+				'</div>'
+
+	document.getElementById("waifus-list").innerHTML += card; 
 }
