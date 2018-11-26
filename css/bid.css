@@ -1,3 +1,7 @@
+body {
+    background: none;
+}
+
 .flex-container {
     grid-template-columns: repeat(auto-fill, minmax(209px, 1fr));
     display: grid;
