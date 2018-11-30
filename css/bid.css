@@ -100,30 +100,34 @@ section{
 }
 
 .close {
-    color: #aaaaaa;
+    color: #888 !important;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    z-index: 999;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: #000 !important;
     text-decoration: none;
     cursor: pointer;
 }
 
 .modal .container {
-    margin: 50px auto;
-    height: 60vh;
+/*    margin: 50px auto;
+    height: 60vh;*/
     background:white;
+    
+    border-radius: 0 0 .3em .3em;
 }
 
+/*
 .detail-content > .container > div{
     padding: 2rem;
     width: calc(100% - 4rem);
     height: calc(100% - 4rem);
-}
+}*/
 
 .detail-content h2 {
     margin: 0;
@@ -132,4 +136,95 @@ section{
 .detail-content span {
     margin-right: 1rem;
     margin-top: 0.5rem;
+}
+
+.base-detail ul {
+    justify-content: center;
+    width: 100%;
+}
+
+.base-detail ul li {
+    display:inline-block;
+    background-color:#eee;
+    list-style-type:none;
+    margin-right:-4px;
+    padding:10px;
+}
+
+.base-detail{
+    width: 100%;
+}
+
+  
+.user-profile {
+    min-height: 38vh;
+    position: relative;
+}
+  
+.user-profile  .username {
+    margin-top: -7.4em;
+    margin-left: 7em;
+    font-size: 1.53em;
+    font-family: "Coda", sans-serif;
+    font-weight: bold;
+}
+
+.user-profile  .bio {
+    margin: auto;
+    display: inline-block;
+    margin-left: 12.4em;
+    font-size: .87em;
+    font-family: "varela round", sans-serif;
+}
+
+.user-profile .description {
+    margin: auto;
+    display: inline-block;
+    margin-left: 12.4em;
+    font-size: .87em;
+    font-family: "varela round", sans-serif;
+}
+
+.user-profile img.avatar {
+    padding: .7em;
+    margin-left: .3em;
+    margin-top: .3em;
+    height: 25vh;
+}
+
+.data {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.user-profile ul.data {
+    height: 3.70em;
+    background: #584678;
+    text-align: center;
+    border-radius: 0 0 .3em .3em;
+}
+.user-profile li {
+    margin: 0 auto;
+    padding: 1.30em; 
+    width: 33.33334%;
+    display: table-cell;
+    text-align: center;
+}
+
+.user-profile span {
+    font-family: "varela round", sans-serif;
+    color: #e3eeee;
+    white-space: nowrap;
+    font-size: 1.27em;
+    font-weight: bold;
+}
+.user-profile span:hover {
+    color: #daebea;
+}
+
+p {
+    margin: 0;
+    padding: 0;
 }
