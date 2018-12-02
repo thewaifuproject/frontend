@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WaifuCHAIN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/faq.css" />
+    <link rel="stylesheet" type="text/css" href="css/bid.css" />
+    <link rel="stylesheet" type="text/css" href="css/bid-individual.css" />
+</head>
+<body onload="main()">
+    <a id="float-discord" href="https://discordapp.com/invite/ykrT4bw" target="_blank" class="round-btn"><div id="discord-text"><span>Talk to us on Discord</span></div></a>
+    <nav id="nav" class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-g expandButton">
+                <svg onclick="displayMenu()" id="menu" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="32px" height="32px" viewBox="0 0 459 459" style="enable-background:new 0 0 459 459;" xml:space="preserve">
+                    <g id="menu-icon-lines">
+                        <path d="M0,382.5h459v-51H0V382.5z M0,255h459v-51H0V255z M0,76.5v51h459v-51H0z"/>
+                    </g>
+                    <g id="menu-icon-close">
+                        <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z" fill="#000"/>
+                    </g>
+                </svg>
+            </div>
+            <div onclick="location.href='index.html'" class="navbar-g nbrand">
+                <svg id="ethlogo" xmlns="http://www.w3.org/2000/svg" height="1.5rem" version="1.1" viewBox="-88 0 512 512" width="1.5rem">
+                    <g id="surface1">
+                    <path d="M 336.558594 288.980469 L 168.28125 351.308594 L 0 288.980469 L 168.28125 0 Z M 336.558594 288.980469 " style=" stroke:none;fill-rule:nonzero;fill:#795c9a;fill-opacity:1;" />
+                    <path d="M 329.210938 323.699219 L 168.28125 512 L 7.351562 323.699219 L 168.28125 383.300781 Z M 329.210938 323.699219 " style=" stroke:none;fill-rule:nonzero;fill:#795c9a;fill-opacity:1;" />
+                    <path d="M 168.28125 383.300781 L 329.210938 323.699219 L 168.28125 512 Z M 168.28125 383.300781 " style=" stroke:none;fill-rule:nonzero;fill:#584678;fill-opacity:1;" />
+                    <path d="M 336.558594 288.980469 L 168.28125 351.308594 L 168.28125 0 Z M 336.558594 288.980469 " style=" stroke:none;fill-rule:nonzero;fill:#584678;fill-opacity:1;" />
+                    </g>
+                </svg>
+                <p>WaifuChain</p>
+            </div>
+            <div id="navlist" class="navbar-g nmenu">
+                <div class="navbar-g spaces">
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="soon.html">
+                                Bid
+                            </a>
+                        </li>
+                        <li>
+                            <a href="faq.html">
+                                FAQs
+                            </a>
+                        </li>             
+                        <li>
+                            <a href="https://github.com/corollari/waifuchain" target="_blank">
+                                Contract
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navbar-g">
+                <a href="soon.html"><button id="playnav" class="nbutton">Start</button></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="detail-content">
+        <div class="container">
+            <div class="user-profile">
+                <span onclick="closeModal()" class="close">&times;</span>
+                <img id="detail-img" class="avatar"/>
+                <div class="username"><p id="detail-title">Waifu name</p></div>
+                <div class="bio">
+                    Waifu serie
+                </div>
+                <div class="description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                </div>
+                <ul class="data">
+                <li>
+                    <span class="entypo-heart">50ETH</span>
+                </li>
+                <li>
+                    <span class="entypo-eye">26h 23m 2s</span>
+                </li>
+                <li>
+                    <span class="entypo-user"> 34</span>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

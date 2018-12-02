@@ -327,10 +327,8 @@ button:focus {outline:0;}
 }
 
 #float-discord:hover{
-    width: 14rem;
-    
+    width: 15.4rem;
     transition: all 0.2s;
-    
 }
 
 /*
