@@ -79,10 +79,14 @@ footer{
 .bid-form, label {
     width: 10rem;
     display: flex;
+    -webkit-flex: 1; /* Safari 6.1+ */
+    -ms-flex: 1; /* IE 10 */ 
     flex: 1;
 }
 input {
     width: 8rem;
+    -webkit-flex: 1; /* Safari 6.1+ */
+    -ms-flex: 1; /* IE 10 */ 
     flex: 1;
     border: 1px solid lightgrey;
     padding: 12px 10px;
@@ -94,6 +98,8 @@ input {
 .bid-form button {
     padding: 0 !important;
     flex: 0 0 100px;
+    -webkit-flex: 0 0 100px; /* Safari 6.1+ */
+    -ms-flex: 0 0 100px; /* IE 10 */ 
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border: 0;
