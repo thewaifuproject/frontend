@@ -1,3 +1,4 @@
+var ccc
 function main(){
     //First the variables our app is going to use need to be declared
 
@@ -76,6 +77,7 @@ function main(){
 		{
 			goToPrevSlide();
 			event.preventDefault();
+
 		}
 		else if(PRESSED_KEY == keyCodes.DOWN)
 		{
@@ -88,6 +90,7 @@ function main(){
 	/*
 	*   When user scrolls with the mouse, we have to change slides
 	* */
+
 	function onMouseWheel(event)
 	{
 		//Normalize event wheel delta
@@ -124,7 +127,20 @@ function main(){
 	{
 		if($currentSlide.next().length)
 		{
-			goToSlide($currentSlide.next());
+			if($currentSlide[0].id=='slide-1'){
+				if (checkExtensionOk()){
+					goToSlide($currentSlide.next());
+				}
+			} 
+			else if ($currentSlide[0].id=='slide-2'){
+				if (checkWalletOk()){
+					goToSlide($currentSlide.next());
+				}
+			}
+			else{
+				goToSlide($currentSlide.next());
+			}
+			
 		}
 	}
 
@@ -183,5 +199,33 @@ function main(){
 			TweenLite.set($slidesContainer, {scrollTo: {y: pageHeight * $currentSlide.index() }});
 		}
 
+	}
+}
+
+function checkExtensionOk(){
+	//return (typeof web3 !== 'undefined');
+	return true;
+}
+
+function checkWalletOk(){
+	/*var logged = false;
+	web3.eth.getAccounts(function(err, accounts){
+		if (err != null) console.error("An error occurred: "+err);
+		else if (accounts.length == 0) logged=false;
+		else logged=true;
+	});
+	return logged;*/
+	return true;
+}
+
+function checkDoneExtension(){
+	if (!checkExtensionOk()){
+		alert("MetaMask isn't installed.");
+	}
+}
+
+function checkDoneWallet(){
+	if (!checkWalletOk()){
+		alert("User is not logged in to MetaMask");
 	}
 }

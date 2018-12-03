@@ -91,6 +91,10 @@ a {
     text-align: center;
 }
 
+.centered img {
+    max-width: 100%;
+}
+
 .slide .centered p {
     text-align: center;
     margin-top: 20px;
@@ -109,7 +113,16 @@ a {
     background-color: #584678;
 }
 
-#slide-4 {
+#slide-4 h1{
+    color: #000;
+}
+#slide-5 h1{
+    color: #000;
+}
+#slide-6 h1{
+    color: #000;
+}
+#slide-7 h1{
     color: #000;
 }
 

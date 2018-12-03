@@ -200,10 +200,9 @@ section{
 }
 
 .data {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    margin: 0;
+    grid-area: countdown;
+    transform: translateY(2px);
 }
 
 .user-profile ul.data {
@@ -250,7 +249,8 @@ p {
       'avatar description description description description description'
       'avatar description description description description description'
       'avatar description description description description description'
-      'avatar description description description description description';
+      'avatar description description description description description'
+      'countdown countdown countdown countdown countdown countdown';
   }
 
   .avatarcontainer{
@@ -259,9 +259,12 @@ p {
 
   .uname{
     grid-area: name;
+    margin-top: 1rem;
+    margin-left: 1rem;
   }
 
   .waifuCard p{
+      text-align: center;
       margin: 1rem 0rem;
   }
 
@@ -272,8 +275,10 @@ p {
 }
 
 @media (max-width: 570px) {
-    .container {
-        text-align: center;
+
+
+    .flex-item {
+        margin: 0 auto;
     }
 }
 
@@ -282,14 +287,15 @@ p {
     grid-template-areas:
         'avatar'
         'name'
-        'description';
+        'description'
+        'countdown';
     }
 
     .modal .container {
         max-width: initial;
     }
 
-    .user-profile {
-        padding-bottom: 4.5em;
+    .container {
+        text-align: center;
     }
 }

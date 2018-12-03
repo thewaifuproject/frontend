@@ -9,6 +9,16 @@ html, body, section, h1, img, nav, button, a, div{
     font-family: 'Nunito Sans', sans-serif;
 }
 
+section p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#sec4 p{
+    text-align: center;
+    text-justify: center;
+}
+
 nav {
     top: 0;
     left: 0;
@@ -166,7 +176,7 @@ section {
     font-weight: bold;
 }
 
-ul {
+.navbar-container ul {
     display: flex;
     justify-content: flex-end;
     list-style: none;
