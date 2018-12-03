@@ -39,6 +39,15 @@ body {
     display: block;
 }
 
+.waifuCard #ima:hover .assign{
+    filter:none !important;
+    z-index: 9999;
+    display: block;
+}
+.waifuCard #ima:hover img{
+    filter:brightness(200%);
+}
+
 #ima{
     position: relative;
     text-align: center;
@@ -50,15 +59,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.waifuCard #ima:hover .assign{
-    filter:none !important;
-    z-index: 9999;
-    display: block;
-}
-.waifuCard #ima:hover img{
-    filter:brightness(200%);
 }
 
 .buttonlight {
@@ -107,6 +107,9 @@ section{
     font-size: 28px;
     font-weight: bold;
     z-index: 999;
+    top: 0;
+    position: absolute;
+    right: 0;
 }
 
 .close:hover,
@@ -163,9 +166,7 @@ section{
     position: relative;
 }
   
-.user-profile  .username {
-    margin-top: -7.4em;
-    margin-left: 7em;
+.user-profile  .uname {
     font-size: 1.53em;
     font-family: "Coda", sans-serif;
     font-weight: bold;
@@ -180,16 +181,15 @@ section{
 }
 
 .user-profile .description {
-    margin: auto;
-    display: inline-block;
-    margin-left: 12.4em;
     font-size: .87em;
     font-family: "varela round", sans-serif;
 }
 
 .description{
-    margin-bottom: 5.9em !important;
-    margin-right: 1.5rem !important;
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 1rem;
+    grid-area: description;
 }
 
 .user-profile img.avatar {
@@ -238,4 +238,58 @@ p {
 
 .modal .container {
     max-width: 50vw;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+      'avatar name name name name name'
+      'avatar description description description description description'
+      'avatar description description description description description'
+      'avatar description description description description description'
+      'avatar description description description description description'
+      'avatar description description description description description'
+      'avatar description description description description description'
+      'avatar description description description description description';
+  }
+
+  .avatarcontainer{
+    grid-area: avatar;
+  }
+
+  .uname{
+    grid-area: name;
+  }
+
+  .waifuCard p{
+      margin: 1rem 0rem;
+  }
+
+  .buttonlight:hover {
+    background: #9c7bd5;
+    box-shadow: 0px 0px 0px 0px #97B1BF;
+    color: #fff;
+}
+
+@media (max-width: 570px) {
+    .container {
+        text-align: center;
+    }
+}
+
+@media (max-width: 740px) {
+    .grid-container {
+    grid-template-areas:
+        'avatar'
+        'name'
+        'description';
+    }
+
+    .modal .container {
+        max-width: initial;
+    }
+
+    .user-profile {
+        padding-bottom: 4.5em;
+    }
 }

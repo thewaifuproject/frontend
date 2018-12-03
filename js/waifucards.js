@@ -6,18 +6,39 @@ function main(){
         }
     }
 }
-var aa;
+
+function updateCountDown(remaining) {
+    document.getElementById('waifu-countdown').innerText = remaining
+}
+
+function setWaifuAnime(anime) {
+    document.getElementById('waifu-anime').innerText = anime
+}
+
+function setDescription(description){
+    document.getElementById('waifu-description').innerText = description
+}
+
 function openModal(a){
     var modal = document.getElementById('waifu-detail');
 	modal.style.display = "block";
-	aa=a;
+
 	document.getElementById('detail-title').innerText = a.firstElementChild.id;
 	document.getElementById('detail-img').src = a.firstElementChild.src;
+	setWaifuAnime("anime")
+	setDescription("description	fdescription	fdescription	fdescription	fdescription	fdescription	fdescription	fdescription	fdescription	f")
 }
 
 function closeModal(){
     var modal = document.getElementById('waifu-detail');
     modal.style.display = "none";
+}
+
+function goDetail(a){
+	console.log(a);
+	var id = a.parentElement.children[0].children[0].id
+	var name = a.parentElement.children[1].textContent
+	window.location = 'bid-individual.html?id='+id+'&name='+name;
 }
 
 
@@ -31,7 +52,7 @@ function insertCard(waifu) {
 							'<span class="assign">'+name+'</span>'+
 							'</div>'+
 							'<p>'+name+'</p>'+
-							'<button class="buttonlight">Bid</button>'+
+							'<button onclick="goDetail(this)" class="buttonlight">Bid</button>'+
 						'</div>'+
 					'</div>'
     waifu+=100

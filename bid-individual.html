@@ -5,9 +5,8 @@
     <title>WaifuCHAIN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link rel="stylesheet" type="text/css" href="css/faq.css" />
-    <link rel="stylesheet" type="text/css" href="css/bid.css" />
     <link rel="stylesheet" type="text/css" href="css/bid-individual.css" />
+    <script src="js/bid-individual.js"></script>
 </head>
 <body onload="main()">
     <a id="float-discord" href="https://discordapp.com/invite/ykrT4bw" target="_blank" class="round-btn"><div id="discord-text"><span>Talk to us on Discord</span></div></a>
@@ -67,30 +66,21 @@
         </div>
     </nav>
 
-    <div class="detail-content">
-        <div class="container">
-            <div class="user-profile">
-                <span onclick="closeModal()" class="close">&times;</span>
-                <img id="detail-img" class="avatar"/>
-                <div class="username"><p id="detail-title">Waifu name</p></div>
-                <div class="bio">
-                    Waifu serie
-                </div>
-                <div class="description">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                </div>
-                <ul class="data">
-                <li>
-                    <span class="entypo-heart">50ETH</span>
-                </li>
-                <li>
-                    <span class="entypo-eye">26h 23m 2s</span>
-                </li>
-                <li>
-                    <span class="entypo-user"> 34</span>
-                </li>
-                </ul>
-            </div>
+    
+    <div class="grid-container">
+        <div class="cardc">
+            <img id="waifu-image" src="">
+        </div>
+        <div class="main">
+            <h4 id="waifu-name">name</h4>
+            <p>Network</p>
+            <p id="waifu-description" class="waifu-description"></p>
+            <h5 id="waifu-countdown">23h 21m 2s</h5>
+            <div class="bid-form">
+                <label>
+                    <input id="waifu-amount" type="number"/>
+                </label>
+                <button onclick="bid()">Bid</button>
             </div>
         </div>
     </div>

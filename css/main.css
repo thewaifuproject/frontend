@@ -9,6 +9,11 @@ html, body, section, h1, img, nav, button, a, div{
     font-family: 'Nunito Sans', sans-serif;
 }
 
+nav {
+    top: 0;
+    left: 0;
+}
+
 img, div{
     border: none;
 }

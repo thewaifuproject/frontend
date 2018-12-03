@@ -1,8 +1,122 @@
-.detail-content{
-    margin: 0 !important;
-    padding: 0 !important; 
+body{
+    margin-top: 8rem;
 }
 
-.container {
-    margin: 50px auto;
+p{
+    font-size: 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'card main main main main main'
+        'footer footer footer footer footer footer';
+    padding: 10px;
+    margin: 0 10%;
+}
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-size: 30px;
+}
+
+.header {
+    grid-area: header;
+}
+
+.cardc {
+    grid-area: card;
+}
+
+.main {
+    position: relative;
+    grid-area: main;
+    text-align: left !important;
+    margin-left: 3rem;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.cardc > img {
+    height: 20rem;
+}
+
+h4, p{
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+footer{
+    font-size: 1em;
+}
+
+.bid-form > a > img{
+    height: 1rem;
+}
+
+.bid-form > a > img:hover{
+    cursor: pointer;
+}
+
+.waifu-description {
+    margin-top: 1.5rem;
+}
+
+.bid-form {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 70% !important;
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.bid-form, label {
+    width: 10rem;
+    display: flex;
+    flex: 1;
+}
+input {
+    width: 8rem;
+    flex: 1;
+    border: 1px solid lightgrey;
+    padding: 12px 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 16px;
+  }
+
+.bid-form button {
+    padding: 0 !important;
+    flex: 0 0 100px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0;
+    font-size: 16px;
+    background: #2564c9;
+    color: #fff;
+  }
+
+  @media (max-width: 840px) {
+    .grid-container {
+        grid-template-areas:
+            'header header header header header header'
+            'card card card card card card'
+            'main main main main main main'
+            'footer footer footer footer footer footer';
+    }
+
+    .main {
+        margin-left: 0;
+    }
+
+    .bid-form {
+        position: initial;
+        margin-top: 1rem;
+    }
 }
