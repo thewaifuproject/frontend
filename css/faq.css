@@ -75,7 +75,7 @@ h1{
 }
 
 .toggle .toggle-title.active i {
-  background: url('http://arielbeninca.com/Storage/plus_minus.png') 0px 0px no-repeat;
+  /*background: url('http://arielbeninca.com/Storage/plus_minus.png') 0px 0px no-repeat;*/
 }
 
 /* Styles for page */ 
