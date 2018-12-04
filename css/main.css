@@ -409,6 +409,10 @@ button:focus {outline:0;}
     z-index: 9;
 }*/
 
+#b3 {
+    left: -37px;
+}
+
 #b4{
     background: linear-gradient(to left, #cdc2be 0%,#cdc2be 23%,rgba(255,255,255,0) 24%,rgba(255,255,255,0) 100%);
 }
