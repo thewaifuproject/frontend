@@ -36,13 +36,11 @@ function updateCountDown(remaining) {
 
 
 var id;
-var name;
 function main(){
     id = GetURLParameter('id')
-    name = GetURLParameter('name')
+    var waifu = JSON.parse(decodeURIComponent(GetURLParameter('obj')))
 
-    setImage("https://api.waifuchain.moe/image/"+id+".jpeg")
-    setName(decodeURIComponent(name)
-    )
-    setDescription("Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final.")
+    setImage(waifu['image'])
+    setName(waifu['name'])
+    setDescription(waifu['description'])
 }
