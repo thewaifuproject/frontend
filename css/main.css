@@ -20,8 +20,37 @@ html, body, section, h1, img, nav, button, a, div{
     z-index: -1;
 }
 
+#d4{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+30,252827+58,252827+58 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 58%, #252827 58%, #252827 58%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 58%,#252827 58%,#252827 58%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #ffffff 0%,#ffffff 58%,#252827 58%,#252827 58%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#252827',GradientType=1 ); /* IE6-9 */
+    background: #252827;
+}
 
+#d5 {
+    background: #252827;
+}
 
+#d6{
+    background: rgb(114, 168, 215);
+}
+
+#b6{
+    left: 406px;
+}
+
+#b2{
+    min-width: auto;
+    background: linear-gradient(to right, rgb(88, 70, 120) 0%, rgb(88, 70, 120) 23%, rgb(255, 255, 255) 24%, rgb(255, 255, 255) 100%);
+}
+
+#b3{
+    min-width: auto;
+    background: linear-gradient(to left, #252827 0%, #252827 28%, rgb(255, 255, 255) 28%, rgb(255, 255, 255) 100%);
+}
 
 section p {
     text-align: justify;
@@ -102,10 +131,6 @@ section {
     color: white;
 }
 
-#b2{
-    min-width: auto;
-    background: linear-gradient(to right, rgb(88, 70, 120) 0%, rgb(88, 70, 120) 23%, rgb(255, 255, 255) 24%, rgb(255, 255, 255) 100%);
-}
 
 .bgimages-item:nth-child(1){
     transform: translate(400%,0);
@@ -278,6 +303,9 @@ h2{
 
 #sec4 {
     text-align: center;
+    transform: translate(-100%, 0%);
+    width: 18%;
+    padding: 35px;
 }
 
 button{

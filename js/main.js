@@ -9,7 +9,7 @@ function main(){
         if (w<740)
             var secV = height/8
         else
-            var secV = height/9
+            var secV = height/8
         var redenH = ((scrollTop/height)/2)/(secV/height)
         
         var redenV = redenH*w
@@ -31,10 +31,14 @@ function main(){
         document.getElementById('d3').style.transform = "translate("+((-(redenV/w)*100)+100)+"%, 0%) scaleX(1.01)"
         document.getElementById('b4').style.transform = "translate("+((-(redenV/w)*100)+150)+"%, 0%) scaleX(1.01)"
         document.getElementById('d4').style.transform = "translate("+((-(redenV/w)*100)+150)+"%, 0%) scaleX(1.01)"
-        document.getElementById('b5').style.transform = "translate("+((-(redenV/w)*100)+200)+"%, 0%) scaleX(1.01)"
-        document.getElementById('d5').style.transform = "translate("+((-(redenV/w)*100)+200)+"%, 0%) scaleX(1.01)"
-        document.getElementById('b6').style.transform = "translate("+((-(redenV/w)*100)+250)+"%, 0%) scaleX(1.01)"
-        document.getElementById('d6').style.transform = "translate("+((-(redenV/w)*100)+250)+"%, 0%) scaleX(1.01)"
+        document.getElementById('b5').style.transform = "translate("+((-(redenV/w)*100)+250)+"%, 0%) scaleX(1.01)"
+        document.getElementById('d5').style.transform = "translate("+((-(redenV/w)*100)+250)+"%, 0%) scaleX(1.01)"
+        document.getElementById('b6').style.transform = "translate("+((-(redenV/w)*100)+350)+"%, 0%) scaleX(1.01)"
+        document.getElementById('d6').style.transform = "translate("+((-(redenV/w)*100)+350)+"%, 0%) scaleX(1.01)"
+        /*document.getElementById('b7').style.transform = "translate("+((-(redenV/w)*100)+500)+"%, 0%) scaleX(1.01)"
+        document.getElementById('d7').style.transform = "translate("+((-(redenV/w)*100)+500)+"%, 0%) scaleX(1.01)"
+        document.getElementById('b8').style.transform = "translate("+((-(redenV/w)*100)+500)+"%, 0%) scaleX(1.01)"
+        document.getElementById('d8').style.transform = "translate("+((-(redenV/w)*100)+500)+"%, 0%) scaleX(1.01)"*/
         
         //console.log(document.getElementById('test2').getBoundingClientRect().top)
         if (document.getElementById('test2').getBoundingClientRect().top > 0){
