@@ -153,6 +153,7 @@
     font-weight: 600;
   }
   h1 {
+    position: relative;
     font-family: 'Saira', sans-serif;
     letter-spacing: 1.5px;
     color: white;
@@ -213,7 +214,7 @@
     top: 0;
   }
   .timeline .event:before {
-    left: -217.5px;
+    left: -190px;
     color: rgba(255, 255, 255, 0.4);
     content: attr(data-date);
     text-align: right;

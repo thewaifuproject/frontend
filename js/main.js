@@ -6,35 +6,35 @@ function main(){
 
         var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
         
-        if (w<740)
-            var secV = height/8
+        if (w<980)
+            var secV = height/11
         else
-            var secV = height/8
+            var secV = height/11
         var redenH = ((scrollTop/height)/2)/(secV/height)
         
         var redenV = redenH*w
         //this.console.log(secV + "  " + height)
         //var el = document.getElementById('d').style.width = "calc("+w+"px - "+redenV+"px)"transform: translate(-90%,0);
         if (w<980){
-            document.getElementById('d1').style.transform = "translate("+-(redenV/w)*100+"%, 0%) scaleX(-1.01)"
-            document.getElementById('b1').style.transform = "translate("+-(redenV/w)*100+"%, 0%) scaleX(-1.01)"
+            document.getElementById('d1').style.transform = "translate("+-(redenV/w)*100+"%, 0%) scaleX(1.01)"
+            document.getElementById('b1').style.transform = "translate("+-(redenV/w)*100+"%, 0%) scaleX(1.01)"
         }
         else {
             document.getElementById('d1').style.transform = "translate("+-(redenV/w)*100+"%, 0%) scaleX(1.01)"
             document.getElementById('b1').style.transform = "translate("+-(redenV/w)*100+"%, 0%) scaleX(1.01)"
         }
 
-        document.getElementById('b2').style.transform = "translate("+((-(redenV/w)*100)+50)+"%, 0%) scaleX(1.01)"
-        document.getElementById('d2').style.transform = "translate("+((-(redenV/w)*100)+50)+"%, 0%) scaleX(1.01)"
+        //document.getElementById('b2').style.transform = "translate("+((-(redenV/w)*100)+100)+"%, 0%) scaleX(1.01)"
+        document.getElementById('d2').style.transform = "translate("+((-(redenV/w)*100)+100)+"%, 0%) scaleX(1.01)"
         //document.getElementById('db2').style.transform = "translate("+((-(redenV/w)*100)+100-1)+"%, 0%)"
-        document.getElementById('b3').style.transform = "translate("+((-(redenV/w)*100)+100)+"%, 0%) scaleX(1.01)"
-        document.getElementById('d3').style.transform = "translate("+((-(redenV/w)*100)+100)+"%, 0%) scaleX(1.01)"
-        document.getElementById('b4').style.transform = "translate("+((-(redenV/w)*100)+150)+"%, 0%) scaleX(1.01)"
-        document.getElementById('d4').style.transform = "translate("+((-(redenV/w)*100)+150)+"%, 0%) scaleX(1.01)"
-        document.getElementById('b5').style.transform = "translate("+((-(redenV/w)*100)+250)+"%, 0%) scaleX(1.01)"
-        document.getElementById('d5').style.transform = "translate("+((-(redenV/w)*100)+250)+"%, 0%) scaleX(1.01)"
-        document.getElementById('b6').style.transform = "translate("+((-(redenV/w)*100)+350)+"%, 0%) scaleX(1.01)"
-        document.getElementById('d6').style.transform = "translate("+((-(redenV/w)*100)+350)+"%, 0%) scaleX(1.01)"
+        //document.getElementById('b3').style.transform = "translate("+((-(redenV/w)*100)+200)+"%, 0%) scaleX(1.01)"
+        document.getElementById('d3').style.transform = "translate("+((-(redenV/w)*100)+200)+"%, 0%) scaleX(1.01)"
+        //document.getElementById('b4').style.transform = "translate("+((-(redenV/w)*100)+300)+"%, 0%) scaleX(1.01)"
+        document.getElementById('d4').style.transform = "translate("+((-(redenV/w)*100)+300)+"%, 0%) scaleX(1.1)"
+        //document.getElementById('b5').style.transform = "translate("+((-(redenV/w)*100)+400)+"%, 0%) scaleX(1.01)"
+        document.getElementById('d5').style.transform = "translate("+((-(redenV/w)*100)+400)+"%, 0%) scaleX(1.01)"
+        //document.getElementById('b6').style.transform = "translate("+((-(redenV/w)*100)+500)+"%, 0%) scaleX(1.01)"
+        document.getElementById('d6').style.transform = "translate("+((-(redenV/w)*100)+500)+"%, 0%) scaleX(1.01)"
         /*document.getElementById('b7').style.transform = "translate("+((-(redenV/w)*100)+500)+"%, 0%) scaleX(1.01)"
         document.getElementById('d7').style.transform = "translate("+((-(redenV/w)*100)+500)+"%, 0%) scaleX(1.01)"
         document.getElementById('b8').style.transform = "translate("+((-(redenV/w)*100)+500)+"%, 0%) scaleX(1.01)"

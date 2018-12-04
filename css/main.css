@@ -35,19 +35,24 @@ html, body, section, h1, img, nav, button, a, div{
 }
 
 #d6{
+    z-index: 1;
     background: rgb(114, 168, 215);
 }
 
-#b6{
-    left: 406px;
+#b1 {
+    right: 0rem;
 }
 
-#b2{
+#b6{
+    right: -23rem;
+}
+
+#d2{
     min-width: auto;
     background: linear-gradient(to right, rgb(88, 70, 120) 0%, rgb(88, 70, 120) 23%, rgb(255, 255, 255) 24%, rgb(255, 255, 255) 100%);
 }
 
-#b3{
+#d3{
     min-width: auto;
     background: linear-gradient(to left, #252827 0%, #252827 28%, rgb(255, 255, 255) 28%, rgb(255, 255, 255) 100%);
 }
@@ -120,7 +125,7 @@ section {
 
 .bgimages-item{
     /*min-width: 100%;*/
-    width: 100%;
+    width: 100vw;
     /*height: 100vh;*/
     position: fixed;
     z-index: 1;
@@ -132,17 +137,25 @@ section {
 }
 
 
-.bgimages-item:nth-child(1){
+.bgimages-item:nth-child(6){
+    transform: translate(500%,0);
+}
+
+.bgimages-item:nth-child(5){
     transform: translate(400%,0);
 }
 
-.bgimages-item:nth-child(2){
+.bgimages-item:nth-child(4){
+    transform: translate(300%,0);
+}
+
+.bgimages-item:nth-child(3){
     transform: translate(200%,0);
 }
-.bgimages-item:nth-child(3){
+.bgimages-item:nth-child(2){
     transform: translate(100%,0);
 }
-.bgimages-item:nth-child(4){
+.bgimages-item:nth-child(1){
     transform: translate(0%,0%);
 }
 
@@ -400,6 +413,11 @@ button:focus {outline:0;}
     background: linear-gradient(to left, #cdc2be 0%,#cdc2be 23%,rgba(255,255,255,0) 24%,rgba(255,255,255,0) 100%);
 }
 
+#background > div > img {
+    bottom: 0;
+}
+
+
 @media (max-width: 740px){
     .navbar-container {
         flex-direction: column;
@@ -425,7 +443,7 @@ button:focus {outline:0;}
     }
 }
 
-@media (max-width: 1010px) {
+@media (max-width: 980px) {
     .maint{
         width: 90vw;
         transform: translateX(0px);
@@ -434,6 +452,15 @@ button:focus {outline:0;}
     }
     .maint img {
         display: inline-block;
+    }
+
+    
+    #d3{
+        background-color: #252827;
+    }
+    
+    #sec4{
+        width: initial;
     }
 
 }
