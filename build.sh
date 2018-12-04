@@ -1,1 +1,1 @@
-(cd ../webextension && browserify ../docs/js/bid.js -o ../docs/js/dist/bid.js)
+(cd ../webextension && browserify ../frontend/js/bid.js -o ../frontend/js/dist/bid.js)

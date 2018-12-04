@@ -1,4 +1,19 @@
-const {WaifuChain, web3} = require("../../webextension/extension/web3/WaifuChain.js");
+const Web3 = require('web3');
+const contract = require("../../webextension/extension/web3/ABI.js");
+
+window.addEventListener('load', function() {
+
+// Checking if Web3 has been injected by the browser (Mist/MetaMask)
+if (typeof web3 !== 'undefined') {
+  // Use Mist/MetaMask's provider
+  web3 = new Web3(web3.currentProvider);
+} else {
+  console.log('No web3? You should consider trying MetaMask!')
+  // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+}
+
+let WaifuChain = new web3.eth.Contract(contract.ABI, contract.contractAddress);
 
 WaifuChain.methods.creationTime().call()
 .then((creationTime)=>{
@@ -52,13 +67,15 @@ then((accounts)=>{
 	}
 });
 
-function getBid(waifuId){ //Returns promise
+window.getBid=(waifuId)=>{ //Returns promise
 	return WaifuChain.methods.getMaxBid(waifuId).call();
 }
 
-function displayWaifusOnAuction(waifus){
+window.displayWaifusOnAuction=(waifus)=>{
 	// Build structure
 	waifus.forEach((waifu)=>{
 		//Fill structure
 	})
 }
+
+})
