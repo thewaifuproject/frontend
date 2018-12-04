@@ -137,25 +137,25 @@ section {
 }
 
 
-.bgimages-item:nth-child(6){
+#d6{
     transform: translate(500%,0);
 }
 
-.bgimages-item:nth-child(5){
+#d5{
     transform: translate(400%,0);
 }
 
-.bgimages-item:nth-child(4){
+#d4{
     transform: translate(300%,0);
 }
 
-.bgimages-item:nth-child(3){
+#d3{
     transform: translate(200%,0);
 }
-.bgimages-item:nth-child(2){
+#d2{
     transform: translate(100%,0);
 }
-.bgimages-item:nth-child(1){
+#d1{
     transform: translate(0%,0%);
 }
 
@@ -469,10 +469,6 @@ button:focus {outline:0;}
 @media (max-width: 740px) {
     #sec1, #sec2, #sec3, #sec4 {
         transform: translate(0%, 0%);
-    }
-
-    #b1{
-        transform: scaleX(-1)
     }
 
     #sec1.card{
