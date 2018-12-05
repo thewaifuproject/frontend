@@ -9,6 +9,15 @@ html, body, section, h1, img, nav, button, a, div{
     font-family: 'Nunito Sans', sans-serif;
 }
 
+.card > h3 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.card > p {
+    font-size: 1.17rem;
+}
+
 #background > div {
     height: 100vh;
     width: 100%;
@@ -370,27 +379,8 @@ button:focus {outline:0;}
     transition: all 0.2s;
 }
 
-/*
-#db2{
-    background: linear-gradient(to right, #584678 0%, #584678 25%,#ffffff 25%,#ffffff 100%);
-}
-
-#b3{
-    background: url('../images/purplehairright.png') center center / contain no-repeat;
-    width: 100%;
-    transform: translate(1.54489%, 0%);
-    z-index: 9;
-}
-
-#b4{
-    background: url('../images/blue right.png') center center / contain no-repeat;
-    width: 100%;
-    transform: translate(1.54489%, 0%);
-    z-index: 9;
-}*/
-
 #b3 {
-    left: -37px;
+    right: 8%;
 }
 
 #b4{
@@ -468,17 +458,10 @@ button:focus {outline:0;}
 }
 
 @media (max-width: 740px) {
-    .timeline {
-        background: none;
-    }
-}
-
-
-@media (max-width: 740px) {
     #sec1, #sec2, #sec3, #sec4 {
         transform: translate(0%, 0%);
     }
-
+    
     #sec1.card{
         background: #fff;
         width: 50%;
@@ -488,31 +471,34 @@ button:focus {outline:0;}
         box-shadow: 3px 3px 6px 0px #000;
         z-index: 5;
     }
-
+    
     #sec1.card h3, #sec1.card p {
         color: black;
     }
-
+    
     .expandButton{
         display: initial;
     }
-
+    
     #logo{
         display: none;
     }
-
+    
     .expandButton{
         top: 0.7rem;
         left: 1rem;
     }
-
+    
     .nbrand p {
         font-size: 1.5rem;
     }
-
+    
     #ethlogo{
         height: 1.1rem;
         width: 1.1rem;
     }
-
+    
+    .timeline {
+        background: none;
+    }
 }

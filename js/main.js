@@ -7,9 +7,9 @@ function main(){
         var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
         
         if (w<=740)
-            var secV = height/14
+            var secV = height/15 //num of sections
         else
-            var secV = height/12
+            var secV = height/13
         var redenH = ((scrollTop/height)/2)/(secV/height)
         
         var redenV = redenH*w
@@ -17,15 +17,15 @@ function main(){
         document.getElementById('d1').style.transform = "translate("+-(redenV/w)*100+"%, 0%) scaleX(1.01)"
         document.getElementById('b1').style.transform = "translate("+-(redenV/w)*100+"%, 0%) scaleX(1.01)"
         document.getElementById('d2').style.transform = "translate("+((-(redenV/w)*100)+100)+"%, 0%) scaleX(1.01)"
-        document.getElementById('d3').style.transform = "translate("+((-(redenV/w)*100)+150)+"%, 0%) scaleX(1.01)"
-        document.getElementById('d4').style.transform = "translate("+((-(redenV/w)*100)+250)+"%, 0%) scaleX(1.1)"
-        document.getElementById('d5').style.transform = "translate("+((-(redenV/w)*100)+350)+"%, 0%) scaleX(1.01)"
-        document.getElementById('d5-1').style.transform = "translate("+((-(redenV/w)*100)+450)+"%, 0%) scaleX(1.01)"
+        document.getElementById('d3').style.transform = "translate("+((-(redenV/w)*100)+200)+"%, 0%) scaleX(1.01)"
+        document.getElementById('d4').style.transform = "translate("+((-(redenV/w)*100)+300)+"%, 0%) scaleX(1.1)"
+        document.getElementById('d5').style.transform = "translate("+((-(redenV/w)*100)+400)+"%, 0%) scaleX(1.01)"
+        document.getElementById('d5-1').style.transform = "translate("+((-(redenV/w)*100)+500)+"%, 0%) scaleX(1.01)"
         if (w<= 740) {
-            document.getElementById('d5-2').style.transform = "translate("+((-(redenV/w)*100)+550)+"%, 0%) scaleX(1.01)"
-            document.getElementById('d6').style.transform = "translate("+((-(redenV/w)*100)+650)+"%, 0%) scaleX(1.01)"
+            document.getElementById('d5-2').style.transform = "translate("+((-(redenV/w)*100)+600)+"%, 0%) scaleX(1.01)"
+            document.getElementById('d6').style.transform = "translate("+((-(redenV/w)*100)+700)+"%, 0%) scaleX(1.01)"
         } else{
-            document.getElementById('d6').style.transform = "translate("+((-(redenV/w)*100)+550)+"%, 0%) scaleX(1.01)"
+            document.getElementById('d6').style.transform = "translate("+((-(redenV/w)*100)+600)+"%, 0%) scaleX(1.01)"
         }
 
         
