@@ -137,22 +137,7 @@ section {
 }
 
 
-#d6{
-    transform: translate(500%,0);
-}
-
-#d5{
-    transform: translate(400%,0);
-}
-
-#d4{
-    transform: translate(300%,0);
-}
-
-#d3{
-    transform: translate(200%,0);
-}
-#d2{
+#d2, #d3, #d4, #d5, #d5-1, #d5-2, #d6{
     transform: translate(100%,0);
 }
 #d1{
