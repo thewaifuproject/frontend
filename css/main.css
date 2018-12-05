@@ -30,7 +30,7 @@ html, body, section, h1, img, nav, button, a, div{
     background: #252827;
 }
 
-#d5 {
+#d5, #d5-1, #d5-2 {
     background: #252827;
 }
 
@@ -44,7 +44,7 @@ html, body, section, h1, img, nav, button, a, div{
 }
 
 #b6{
-    right: -23rem;
+    left: 25%;
 }
 
 #d2{
@@ -297,11 +297,6 @@ h2{
     font-size: 2em;
 }
 
-
-.test {
-    z-index: 10;
-}
-
 #sec1 {
     transform: translate(25%, 0%)
 }
@@ -421,6 +416,20 @@ button:focus {outline:0;}
     bottom: 0;
 }
 
+#section3{
+    display: block;
+}
+
+#d5-2 {
+    display: none;
+}
+
+
+@media (min-width: 740px){
+    #space3-6, #space3-5 {
+        display: none;
+    }
+}
 
 @media (max-width: 740px){
     .navbar-container {
@@ -444,6 +453,10 @@ button:focus {outline:0;}
 
     .nmenu , #playnav {
         display: none;
+    }
+
+    #d5-2 {
+        display: initial;
     }
 }
 
@@ -487,10 +500,6 @@ button:focus {outline:0;}
 
     #sec1.card h3, #sec1.card p {
         color: black;
-    }
-
-    #test1 {
-        display: none;
     }
 
     .expandButton{
