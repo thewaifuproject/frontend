@@ -467,6 +467,12 @@ button:focus {outline:0;}
 
 }
 
+@media (max-width: 740px) {
+    .timeline {
+        background: none;
+    }
+}
+
 
 @media (max-width: 740px) {
     #sec1, #sec2, #sec3, #sec4 {
