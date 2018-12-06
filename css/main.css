@@ -380,7 +380,8 @@ button:focus {outline:0;}
 }
 
 #b3 {
-    right: 8%;
+    transform: translateY(35%) scale(0.4);
+    right: -18%;
 }
 
 #b4{
