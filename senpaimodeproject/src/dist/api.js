@@ -62,11 +62,14 @@ function getWaifus(cback) {
         })
 }
 
-function startBid(waifuId, etherReal, etherFake){
+function startBid(waifuId, etherReal, etherFake, logged){
     web3.eth.getAccounts()
         .then((accounts)=>{
-            console.log(accounts[0], waifuId, etherReal, etherFake)
-            bid(accounts[0], waifuId, etherReal, etherFake)
+            logged(!accounts.length)
+            if (accounts.length){
+                console.log(accounts[0], waifuId, etherReal, etherFake)
+                bid(accounts[0], waifuId, etherReal, etherFake)
+            }
         })
 }
 

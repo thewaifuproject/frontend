@@ -14,15 +14,7 @@ function getBidHistory(){
         return log['logbids']
 }
 
-const WaifusList = ({bidresults}) => (
-    <>
-    {bidresults.map(waifu => (
-        <Col lg="3" md="4" sm="6" key={waifu['id']} >
-            <WaifuCard id={waifu['id']} mainButtonText={(waifu['own']) ? "Claim now" : ((waifu['pending']) ? "Pending" : "Lost")}/>
-        </Col>
-    ))}
-    </>
-); 
+ 
 
 class HistoryBid extends Component {
 
@@ -33,12 +25,14 @@ class HistoryBid extends Component {
         this.toggleFade = this.toggleFade.bind(this);
         this.getWaifus = this.getWaifus.bind(this)
         this.revealAll = this.revealAll.bind(this)
+        this.setWaifuName = this.setWaifuName.bind(this)
         this.state = {
             collapse: true,
             fadeIn: true,
             timeout: 300,
             bidresults: [],
-            waifuslog: getBidHistory()
+            waifuslog: getBidHistory(),
+            waifuNames: {}
         };
 
         Api.highestBidderByIDs((id, addr, account) => {
@@ -47,6 +41,21 @@ class HistoryBid extends Component {
                 bidresults: this.state.bidresults.concat({id:id, own:(addr==account), pending:true}),
             });
         })
+    }
+
+    componentWillMount() {
+        Object.keys(this.state.waifuslog).map(addr =>
+            Object.keys(this.state.waifuslog[addr]).map(id => 
+                fetch('https://api.waifuchain.moe/?waifu='+id)
+                    .then(res => {
+                        return res.clone().json()
+                    }).then(res => {
+                        this.setWaifuName(id, res.name)
+                    }).catch(function(error) {
+                        console.log('Hubo un problema con la petición Fetch:' + error.message);
+                    })
+            )
+        )
     }
 
     toggle() {
@@ -66,7 +75,7 @@ class HistoryBid extends Component {
                 Object.keys(this.state.waifuslog[addr]).map(id => 
                     rows.unshift(<tr key={id}>
                         <th scope="row">{id}</th>
-                        <td>Waifu</td>
+                        <td>{this.state.waifuNames[id]}</td>
                         <td>{this.state.waifuslog[addr][id]['real']}</td>
                         <td>{this.state.waifuslog[addr][id]['fake']}</td>
                         <td>{this.state.waifuslog[addr][id]['secret']}</td>
@@ -79,6 +88,25 @@ class HistoryBid extends Component {
 
     revealAll() {
         Api.revealAll();
+    }
+
+    setWaifuName(id, name){
+        let temp = this.state.waifuNames
+        temp[id] = name
+        this.setState( {waifuNames:temp} )
+    }
+
+    createCard(bidresults){
+        const WaifusList = ({bidresults}) => (
+            <>
+            {bidresults.map(waifu => (
+                <Col lg="3" md="4" sm="6" key={waifu['id']} >
+                    <WaifuCard id={waifu['id']} mainButtonText={(waifu['own']) ? "Claim now" : ((waifu['pending']) ? "Pending" : "Lost")} typeT={(waifu['own']) ? "claim" : ((waifu['pending']) ? "pending" : "lost")}/>
+                </Col>
+            ))}
+            </>
+        );
+        return <WaifusList bidresults={bidresults} />;
     }
 
     render() {
@@ -110,7 +138,7 @@ class HistoryBid extends Component {
                     <h1>Results</h1>
                     {console.log(this.state.waifus)}
                     <Row id="waifusOnAuciton" className="main-table">
-                        <WaifusList bidresults={this.state.bidresults}/>
+                        {this.createCard(this.state.bidresults)}
                     </Row>
                 </Container>
             </Fade>

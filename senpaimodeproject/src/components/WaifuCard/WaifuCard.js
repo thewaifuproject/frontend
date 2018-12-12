@@ -14,7 +14,8 @@ class WaifuCard extends Component {
     this.state = {
       dropdownOpen: false,
       waifuShortBio:'',
-      waifuName:''
+      waifuName:'',
+      buttonColor: 'purple'
     };
     
   }
@@ -37,12 +38,24 @@ class WaifuCard extends Component {
     }).catch(function(error) {
       console.log('Hubo un problema con la petición Fetch:' + error.message);
     });
+    
+    if (this.props.typeT=='claim'){
+      this.setState({buttonColor:'success'})
+    } else if (this.props.typeT=='lost') {
+      this.setState({buttonColor:'warning'})
+    }
   }
 
   handleButtonClick = () => {
     const waifuLink = `#/waifus/${this.props.id}`
     window.location=waifuLink
   };
+
+  claim(){
+    if (this.props.typeT=='claim'){
+      
+    }
+  }
 
   render() {
     
@@ -51,7 +64,7 @@ class WaifuCard extends Component {
         <CardTitle>{this.state.waifuName}</CardTitle>
         <CardText>{fn(this.state.waifuShortBio,50)}</CardText>
           <ButtonGroup className="d-flex bd-highlight">
-            <a className='nostile width100' href={"https://waifu.wiki/index.php/"+this.state.waifuName.replace(' ', '_')} target='__blank'><Button color="purple" className="p-2 flex-grow-1 bd-highlight width100">{this.props.mainButtonText}</Button></a>
+            <a className='nostile width100' href={"https://waifu.wiki/index.php/"+this.state.waifuName.replace(' ', '_')} target='__blank'><Button color={this.state.buttonColor} className="p-2 flex-grow-1 bd-highlight width100" onClick={this.claim}>{this.props.mainButtonText}</Button></a>
           </ButtonGroup>
         </CardBody>
     )
@@ -62,11 +75,11 @@ class WaifuCard extends Component {
             {/*<CardSubtitle>Serie</CardSubtitle>*/}
             <CardText>{fn(this.state.waifuShortBio,50)}</CardText>
             <ButtonGroup className="d-flex bd-highlight">
-            <Button color="purple" className="p-2 flex-grow-1 bd-highlight" onClick={this.handleButtonClick}>
+            <Button color={this.state.buttonColor} className="p-2 flex-grow-1 bd-highlight" onClick={this.handleButtonClick}>
               {this.props.mainButtonText}
             </Button>
             <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle color="purple" caret></DropdownToggle>
+        <DropdownToggle color={this.state.buttonColor} caret></DropdownToggle>
         <DropdownMenu>
           <a className='nostile' href={"https://waifu.wiki/index.php/"+this.state.waifuName.replace(' ', '_')} target='__blank'><DropdownItem className="pointa">See on the wiki</DropdownItem></a>
         </DropdownMenu>

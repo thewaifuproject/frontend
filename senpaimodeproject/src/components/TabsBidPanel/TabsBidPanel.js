@@ -49,7 +49,6 @@ class TabsBidPanel extends Component {
                 <Row>
                 <Col sm="12">
                     <h4>Biography</h4>
-                    
                     <Button outline color="primary">Know more on the wiki</Button>
                 </Col>
                 </Row>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './BidPanel.css';
 
 import { Card, CardBody, Button, InputGroup, Input, InputGroupAddon } from 'reactstrap';
-import { Col, Row, Container } from 'reactstrap';
+import { Col, Row, Container, Alert } from 'reactstrap';
 
 import TooltipItem from '../TooltipQuestion/TooltipQuestion'
 
@@ -12,11 +12,14 @@ class BidPanel extends Component {
   constructor(props) {
     super(props);
 
+    this.onDismissAlert = this.onDismissAlert.bind(this);
     this.updateCountDown = this.updateCountDown.bind(this);
     this.toggle = this.toggle.bind(this);
     this.state = {
       tooltipOpen: false,
-      countdown: ''
+      countdown: '',
+      alert: false,
+      alertText: ''
     };
 
     Api.setCountDown((countDownDate, active)=>{
@@ -72,10 +75,16 @@ class BidPanel extends Component {
   }
 
   bid(){
-    console.log(this.state.realBidValue)
-    if (this.state.realBidValue<=this.state.fakeBidValue){
-      Api.startBid(this.props.wid, this.state.realBidValue, this.state.fakeBidValue)
+    if (parseInt(this.state.realBidValue)<=parseInt(this.state.fakeBidValue)){
+      Api.startBid(this.props.wid, this.state.realBidValue, this.state.fakeBidValue, (logged) => this.setState({ alert:logged, alertText: "You are not logged in in Metamask!"}))
+    } else {
+      this.setState({ alertText: "Fake bid must be greater or equal than real bid." });
+      this.setState({ alert: true });
     }
+  }
+
+  onDismissAlert(){
+    this.setState({ alert: false });
   }
 
   render() {
@@ -112,6 +121,13 @@ class BidPanel extends Component {
                           <span>Auction ends in:</span>
                           <h2>{this.state.countdown}</h2>
                         </div>
+                      </Col>
+                    </Row>
+                    <Row className="countdown-row">
+                      <Col>
+                      <Alert color="danger" isOpen={this.state.alert} toggle={this.onDismissAlert}>
+                        {this.state.alertText}
+                      </Alert>
                       </Col>
                     </Row>
                     <Row>
