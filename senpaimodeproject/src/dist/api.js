@@ -72,12 +72,11 @@ function startBid(waifuId, etherReal, etherFake){
 
 function bid(account, waifuId, etherReal, etherFake){
     var secreto = getRandomInt(0,999999999999999)
-    
     myContract
         .methods
-        .bid(waifuId, web3.utils.soliditySha3(web3.utils.toWei(etherReal), web3.utils.toWei(etherFake), secreto)).send({
+        .bid(waifuId, web3.utils.soliditySha3(web3.utils.toWei(etherReal),false, secreto)).send({
         from:account,
-        value:web3.utils.toWei(etherReal)
+        value:web3.utils.toWei(etherFake)
     }).then(()=>{
         saveBidData(account, waifuId, etherReal, etherFake, secreto)
         console.log("puja realizada con exito")
