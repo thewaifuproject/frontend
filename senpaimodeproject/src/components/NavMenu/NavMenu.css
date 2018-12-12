@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+.items {
+    color: black !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.items:hover {
+    color: #584678 !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.NavMenu{
+    display: inherit;
+    height: 100%;
+}

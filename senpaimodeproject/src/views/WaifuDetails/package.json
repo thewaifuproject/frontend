@@ -1,0 +1,6 @@
+{
+    "name": "WaifuDetail",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./WaifuDetail.js"
+}

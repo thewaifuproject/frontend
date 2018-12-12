@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.fixedH-auction {
+    object-fit: cover;
+    object-position: center;
+    height: 15rem;
+}
+
+.action-button-card, .action-button-card:hover {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.nostile, .nostile:hover {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+
+.pointa {
+    cursor: pointer;
+}
+
+.width100{
+    width: 100%;
+}
+
+@media (max-width: 576px) and (min-width: 385px){
+    .fixedH-auction {
+        object-fit: contain;
+    }
+}

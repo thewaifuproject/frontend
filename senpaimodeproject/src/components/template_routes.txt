@@ -1,0 +1,334 @@
+[
+  {
+    "path": "/",
+    "exact": true,
+    "name": "Home"
+  },
+  {
+    "path": "/dashboard",
+    "name": "Dashboard",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/theme",
+    "exact": true,
+    "name": "Theme",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/theme/colors",
+    "name": "Colors",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/theme/typography",
+    "name": "Typography",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base",
+    "exact": true,
+    "name": "Base",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/cards",
+    "name": "Cards",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/forms",
+    "name": "Forms",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/switches",
+    "name": "Switches",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/tables",
+    "name": "Tables",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/tabs",
+    "name": "Tabs",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/breadcrumbs",
+    "name": "Breadcrumbs",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/carousels",
+    "name": "Carousel",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/collapses",
+    "name": "Collapse",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/dropdowns",
+    "name": "Dropdowns",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/jumbotrons",
+    "name": "Jumbotrons",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/list-groups",
+    "name": "List Groups",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/navbars",
+    "name": "Navbars",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/navs",
+    "name": "Navs",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/paginations",
+    "name": "Paginations",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/popovers",
+    "name": "Popovers",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/progress-bar",
+    "name": "Progress Bar",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/base/tooltips",
+    "name": "Tooltips",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/buttons",
+    "exact": true,
+    "name": "Buttons",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/buttons/buttons",
+    "name": "Buttons",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/buttons/button-dropdowns",
+    "name": "Button Dropdowns",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/buttons/button-groups",
+    "name": "Button Groups",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/buttons/brand-buttons",
+    "name": "Brand Buttons",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/icons",
+    "exact": true,
+    "name": "Icons",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/icons/coreui-icons",
+    "name": "CoreUI Icons",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/icons/flags",
+    "name": "Flags",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/icons/font-awesome",
+    "name": "Font Awesome",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/icons/simple-line-icons",
+    "name": "Simple Line Icons",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/notifications",
+    "exact": true,
+    "name": "Notifications",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/notifications/alerts",
+    "name": "Alerts",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/notifications/badges",
+    "name": "Badges",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/notifications/modals",
+    "name": "Modals",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/widgets",
+    "name": "Widgets",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/charts",
+    "name": "Charts",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/users",
+    "exact": true,
+    "name": "Users",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  },
+  {
+    "path": "/users/:id",
+    "exact": true,
+    "name": "User Details",
+    "component": {
+      "_status": -1,
+      "_result": null
+    }
+  }
+]

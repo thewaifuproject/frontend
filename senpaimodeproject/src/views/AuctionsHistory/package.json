@@ -1,0 +1,6 @@
+{
+    "name": "AuctionsHistory",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./AuctionsHistory.js"
+}
