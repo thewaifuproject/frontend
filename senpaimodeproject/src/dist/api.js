@@ -138,7 +138,7 @@ function revealAll(){
             myContract
                 .methods
                 .reveal(parseInt(id), _values, _fake, _secret)
-                .call()
+                .send({from: addr})
                 .then( () => {
                     console.log('OK', id)
                 })
