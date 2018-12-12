@@ -74,7 +74,11 @@ function bid(account, waifuId, etherReal, etherFake){
     var secreto = getRandomInt(0,999999999999999)
     myContract
         .methods
-        .bid(waifuId, web3.utils.soliditySha3(web3.utils.toWei(etherReal),false, secreto)).send({
+        .bid(waifuId, web3.utils.soliditySha3(
+                {type: 'uint256', value: web3.utils.toWei(etherReal)},
+                {type: 'bool', value: false},
+                {type: 'bytes32', value: web3.utils.numberToHex(secreto)}
+	)).send({
         from:account,
         value:web3.utils.toWei(etherFake)
     }).then(()=>{
@@ -119,11 +123,11 @@ function revealAll(){
     Object.keys(waifus2reveal).map(addr => {
         Object.keys(waifus2reveal[addr]).map(id => {
             let _values = []
-            waifus2reveal[addr][id]['real'].map( _v => _values.unshift(web3.utils.toWei(_v)))
+            waifus2reveal[addr][id]['real'].forEach( _v => _values.push(web3.utils.toWei(_v)))
             let _fake = []
-            waifus2reveal[addr][id]['fake'].map( _f => _fake.unshift(web3.utils.toWei(_f)))
+            waifus2reveal[addr][id]['fake'].forEach( _f => _fake.push(false))
             let _secret = []
-            waifus2reveal[addr][id]['secret'].map( _s => _secret.unshift(web3.utils.toHex(_s)))
+            waifus2reveal[addr][id]['secret'].forEach( _s => _secret.push(web3.utils.numberToHex(_s)))
             console.log([parseInt(id)])
             console.log(_values)
             console.log(_fake)
