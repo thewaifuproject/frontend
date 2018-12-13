@@ -79,7 +79,7 @@ function bid(account, waifuId, etherReal, etherFake){
 	)).send({
         from:account,
         value:web3.utils.toWei(etherFake)
-    }).then(()=>{
+    }).on('transactionHash', (hash)=>{
         saveBidData(account, waifuId, etherReal, etherFake, secreto)
         console.log("puja realizada con exito")
     });
