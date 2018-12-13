@@ -4,6 +4,8 @@ import { ButtonGroup, Button, ButtonDropdown, DropdownToggle, DropdownMenu, Drop
 import { Link } from 'react-router-dom';
 import './WaifuCard.css';
 
+import * as Api from '../../dist/api'
+
 class WaifuCard extends Component {
 
   constructor(props) {
@@ -53,7 +55,7 @@ class WaifuCard extends Component {
 
   claim(){
     if (this.props.typeT=='claim'){
-      
+      Api.claimWaifu(this.props.id);
     }
   }
 

@@ -131,13 +131,9 @@ function revealAll(){
             waifus2reveal[addr][id]['fake'].forEach( _f => _fake.push(false))
             let _secret = []
             waifus2reveal[addr][id]['secret'].forEach( _s => _secret.push(web3.utils.numberToHex(_s)))
-            console.log([parseInt(id)])
-            console.log(_values)
-            console.log(_fake)
-            console.log(_secret)
             myContract
                 .methods
-                .reveal(parseInt(id), _values, _fake, _secret)
+                .reveal(id, _values, _fake, _secret)
                 .send({from: addr})
                 .then( () => {
                     console.log('OK', id)
@@ -155,7 +151,7 @@ function highestBidderByIDs(setupWinners){
             Object.keys(waifus2check[addr]).map(id => {
                 myContract
                     .methods
-                    .highestBidder(id)
+                    .highestBidder(parseInt(id))
                     .call()
                     .then( (address) => {
                         console.log('Highest bidder: ', address)
@@ -167,11 +163,23 @@ function highestBidderByIDs(setupWinners){
     
 }
 
+function claimWaifu(id){
+    myContract
+        .methods
+        .claimWaifu(id)
+        .call()
+        .then(() => {
+            console.log("Claimed ", id)
+            //save
+        })
+}
+
 export {
     setCountDown,
     getWaifus,
     getAccount,
     startBid,
     revealAll,
-    highestBidderByIDs
+    highestBidderByIDs,
+    claimWaifu
  };
