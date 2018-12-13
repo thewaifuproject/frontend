@@ -81,12 +81,22 @@ function bid(account, waifuId, etherReal, etherFake){
         value:web3.utils.toWei(etherFake)
     }).on('transactionHash', (hash)=>{
         saveBidData(account, waifuId, etherReal, etherFake, secreto)
-        console.log("puja realizada con exito")
     });
 }
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function getLocalStorage(account){
+    if (localStorage.getItem("waifuchain")==null){
+        localStorage.setItem("waifuchain", JSON.stringify({ 'logbids' : { } }))
+    }
+    let wchainStorage = JSON.parse(localStorage.getItem("waifuchain"))
+    if (!wchainStorage['logbids'].hasOwnProperty(account)){
+        wchainStorage['logbids'][account] = {}
+    }
+    return wchainStorage;
 }
 
 function saveBidData(account, nid, nreal, nfake, nsecret){
@@ -95,13 +105,8 @@ function saveBidData(account, nid, nreal, nfake, nsecret){
         'fake': [nfake],
         'secret': [nsecret]
     }
-    if (localStorage.getItem("waifuchain")==null){
-        localStorage.setItem("waifuchain", JSON.stringify({ 'logbids' : { } }))
-    }
-    let wchainStorage = JSON.parse(localStorage.getItem("waifuchain"))
-    if (!wchainStorage['logbids'].hasOwnProperty(account)){
-        wchainStorage['logbids'][account] = {}
-    }
+
+    let wchainStorage = getLocalStorage(account)
 
     if (wchainStorage['logbids'][account].hasOwnProperty(nid)){
         wchainStorage['logbids'][account][nid]['real'].push(newbid['real'][0])
@@ -112,9 +117,7 @@ function saveBidData(account, nid, nreal, nfake, nsecret){
     }
     localStorage.setItem('waifuchain', JSON.stringify(wchainStorage));
 }
-var toType = function(obj) {
-    return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase()
-  }
+
 function revealAll(){
     let day=Math.floor((new Date()-Number(creationTimeString)*1000)/(1000*24*60*60))-1;
     let month=Math.floor(day/30);
@@ -154,7 +157,7 @@ function revealAll(){
 function highestBidderByIDs(setupWinners){
 
     getAccount((account)=>{
-        let waifus2check = JSON.parse(localStorage.getItem("waifuchain"))['logbids']
+        let waifus2check = getLocalStorage(account)['logbids']
         console.log(waifus2check)
         Object.keys(waifus2check).map(addr => {
             Object.keys(waifus2check[addr]).map(id => {
@@ -183,6 +186,8 @@ function claimWaifu(id){
 }
 
 function getWaifusByAddr(addr){
+    //tokenOfOwnerByIndex
+    //balanceOf
     return []
 }
 
