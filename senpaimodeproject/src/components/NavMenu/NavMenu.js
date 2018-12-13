@@ -18,9 +18,9 @@ class NavMenu extends Component {
           <NavItem className="px-3">
             <NavLink  className="items" href="https://waifuchain.moe/tutorial.html">Tutorial</NavLink>
           </NavItem>
-          <NavItem className="px-3">
+          {/*<NavItem className="px-3">
             <NavLink  className="items" href="https://rinkeby.opensea.io/assets/waifuchain" target="__blank">Market</NavLink>
-          </NavItem>
+          </NavItem>*/}
           <NavItem className="px-3">
             <NavLink  className="items" href="https://discordapp.com/invite/ykrT4bw" target="__blank">Discord</NavLink>
           </NavItem>
