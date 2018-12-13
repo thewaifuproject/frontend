@@ -74,13 +74,13 @@ function startBid(waifuId, etherReal, etherFake, logged){
 }
 
 function bid(account, waifuId, etherReal, etherFake){
-    var secreto = getRandomInt(0,999999999999999)
+    var secreto = web3.utils.randomHex(32);
     myContract
         .methods
         .bid(waifuId, web3.utils.soliditySha3(
                 {type: 'uint256', value: web3.utils.toWei(etherReal)},
                 {type: 'bool', value: false},
-                {type: 'bytes32', value: web3.utils.numberToHex(secreto)}
+                {type: 'bytes32', value: secreto}
 	)).send({
         from:account,
         value:web3.utils.toWei(etherFake)
@@ -130,7 +130,7 @@ function revealAll(){
             let _fake = []
             waifus2reveal[addr][id]['fake'].forEach( _f => _fake.push(false))
             let _secret = []
-            waifus2reveal[addr][id]['secret'].forEach( _s => _secret.push(web3.utils.numberToHex(_s)))
+            waifus2reveal[addr][id]['secret'].forEach( _s => _secret.push(_s))
             myContract
                 .methods
                 .reveal(id, _values, _fake, _secret)
