@@ -14,7 +14,15 @@ function getBidHistory(){
         return log['logbids']
 }
 
- 
+const WaifusList = ({bidresults}) => (
+    <>
+    {bidresults.map(waifu => (
+        <Col lg="3" md="4" sm="6" key={waifu['id']} >
+            <WaifuCard id={waifu['id']} mainButtonText={(waifu['own']) ? "Claim now" : ((waifu['pending']) ? "Pending" : "Lost")} typeT={(waifu['own']) ? "claim" : ((waifu['pending']) ? "pending" : "lost")}/>
+        </Col>
+    ))}
+    </>
+);
 
 class HistoryBid extends Component {
 
@@ -36,9 +44,8 @@ class HistoryBid extends Component {
         };
 
         Api.highestBidderByIDs((id, addr, account) => {
-            console.log((this.state.bidresults))
             this.setState({
-                bidresults: this.state.bidresults.concat({id:id, own:(addr==account), pending:true}),
+                bidresults: this.state.bidresults.concat({id:id, own:(addr===account), pending:true}),
             });
         })
     }
@@ -68,7 +75,7 @@ class HistoryBid extends Component {
 
     getWaifus() {
         let rows = []
-        if (this.state.waifuslog==null || Object.keys(this.state.waifuslog).length == 0)
+        if (this.state.waifuslog===null || Object.keys(this.state.waifuslog).length == 0)
             rows.push()
         else
             Object.keys(this.state.waifuslog).map(addr =>
@@ -96,26 +103,12 @@ class HistoryBid extends Component {
         this.setState( {waifuNames:temp} )
     }
 
-    createCard(bidresults){
-        const WaifusList = ({bidresults}) => (
-            <>
-            {bidresults.map(waifu => (
-                <Col lg="3" md="4" sm="6" key={waifu['id']} >
-                    <WaifuCard id={waifu['id']} mainButtonText={(waifu['own']) ? "Claim now" : ((waifu['pending']) ? "Pending" : "Lost")} typeT={(waifu['own']) ? "claim" : ((waifu['pending']) ? "pending" : "lost")}/>
-                </Col>
-            ))}
-            </>
-        );
-        return <WaifusList bidresults={bidresults} />;
-    }
-
     render() {
         return (
             <div className="animated fadeIn">
             <Fade timeout={this.state.timeout} in={this.state.fadeIn}>
                 <Container className="content-container">
                     <h1>History bid</h1>
-                    {console.log(this.state.waifus)}
                     <Table hover responsive>
                         <thead>
                             <tr>
@@ -136,9 +129,8 @@ class HistoryBid extends Component {
                 <h1></h1>
                 <Container className="content-container">
                     <h1>Results</h1>
-                    {console.log(this.state.waifus)}
                     <Row id="waifusOnAuciton" className="main-table">
-                        {this.createCard(this.state.bidresults)}
+                    <WaifusList bidresults={this.state.bidresults} />
                     </Row>
                 </Container>
             </Fade>

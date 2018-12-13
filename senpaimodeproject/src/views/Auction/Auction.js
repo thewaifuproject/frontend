@@ -27,13 +27,8 @@ class Auction extends Component {
             collapse: true,
             fadeIn: true,
             timeout: 300,
-            idswaifus: []
+            idswaifus: Api.getWaifus()
         };
-        Api.getWaifus((waifus)=>{
-            this.setState({
-                idswaifus: waifus,
-            });
-        })
     }
 
     toggle() {

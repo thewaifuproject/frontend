@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Tooltip } from 'reactstrap';
+import { Tooltip } from 'reactstrap';
 
 class TooltipItem extends React.Component {
   constructor(props) {
@@ -29,8 +29,4 @@ class TooltipItem extends React.Component {
   }
 }
 
-export default TooltipItem
-
-
-
-{/*<span className="fa fa-question-circle"></span>*/}
+export default TooltipItem;

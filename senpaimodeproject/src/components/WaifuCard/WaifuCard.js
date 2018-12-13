@@ -6,6 +6,8 @@ import './WaifuCard.css';
 
 import * as Api from '../../dist/api'
 
+let mounted;
+
 class WaifuCard extends Component {
 
   constructor(props) {
@@ -13,6 +15,7 @@ class WaifuCard extends Component {
 
     this.handleButtonClick = this.handleButtonClick.bind(this)
     this.toggle = this.toggle.bind(this);
+    this.claim = this.claim.bind(this);
     this.state = {
       dropdownOpen: false,
       waifuShortBio:'',
@@ -29,21 +32,26 @@ class WaifuCard extends Component {
   }
 
   componentWillMount() {
-    fetch('https://api.waifuchain.moe/?waifu='+this.props.id)
+    //mounted = true;
+    //console.log("componentWillMount", mounted) may
+    fetch('https://api.waifuchain.moe/?waifu='+this.props.id) //TODO: cancel fetch on componentWillUnmount
     .then(res => {
       return res.clone().json()
     }).then(res => {
-      this.setState({ waifuName: res.name,
-                      waifuImage: res.image,
-                      waifuDescription: res.description,
-                      waifuShortBio: fn(res.description,50)});
+      //console.log(mounted)
+      //if (mounted) {
+        this.setState({ waifuName: res.name,
+                        waifuImage: res.image,
+                        waifuDescription: res.description,
+                        waifuShortBio: fn(res.description,50)});
+      //}
     }).catch(function(error) {
       console.log('Hubo un problema con la petición Fetch:' + error.message);
     });
     
-    if (this.props.typeT=='claim'){
+    if (this.props.typeT==='claim'){
       this.setState({buttonColor:'success'})
-    } else if (this.props.typeT=='lost') {
+    } else if (this.props.typeT==='lost') {
       this.setState({buttonColor:'warning'})
     }
   }
@@ -54,10 +62,15 @@ class WaifuCard extends Component {
   };
 
   claim(){
-    if (this.props.typeT=='claim'){
+    if (this.props.typeT==='claim'){
       Api.claimWaifu(this.props.id);
     }
   }
+
+  //componentWillUnmount(){
+  //  mounted = false;
+  //  console.log("componentWillUnmount", mounted)
+  //}
 
   render() {
     
@@ -70,7 +83,7 @@ class WaifuCard extends Component {
           </ButtonGroup>
         </CardBody>
     )
-    if (this.props.type=='drop'){
+    if (this.props.type==='drop'){
       cardbody = (
         <CardBody>
             <CardTitle>{this.state.waifuName}</CardTitle>

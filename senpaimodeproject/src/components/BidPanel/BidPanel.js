@@ -15,16 +15,18 @@ class BidPanel extends Component {
     this.onDismissAlert = this.onDismissAlert.bind(this);
     this.updateCountDown = this.updateCountDown.bind(this);
     this.toggle = this.toggle.bind(this);
+
+    let countdown = Api.getCountDown(this.props.wid)
+
     this.state = {
       tooltipOpen: false,
-      countdown: '',
+      countDownDate: countdown[0],
+      countdown:'-',
       alert: false,
-      alertText: ''
+      alertText: '',
+      active:countdown[1]
     };
 
-    Api.setCountDown((countDownDate, active)=>{
-      this.setState({ countDownDate:countDownDate, active:active});
-    }, this.props.wid)
   }
 
   componentDidMount() {

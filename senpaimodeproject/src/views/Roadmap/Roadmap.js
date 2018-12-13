@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
-import { Fade, Col, Row, Container } from 'reactstrap';
-import { VerticalTimeline, VerticalTimelineElement, WorkIcon, SchoolIcon, StarIcon }  from 'react-vertical-timeline-component';
+import { Container } from 'reactstrap';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
 import './Roadmap.css'
 
 class Roadmap extends Component {
-
-    constructor(props) {
-        super(props);
-
-    }
 
     render() {
         return (

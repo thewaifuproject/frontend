@@ -25,7 +25,7 @@ function getAccount(cback) {
       });
   }) */
 
-function setCountDown(setupCoundownUI, wid) {
+function getCountDown(wid) {
             var creationTime=Number(creationTimeString);
             // Set the date we're counting down to
             let countDownDate=new Date().getTime() + (1000*24*60*60 - ((new Date().getTime() - creationTime*1000)%(1000 * 60 * 60 * 24)));
@@ -37,12 +37,12 @@ function setCountDown(setupCoundownUI, wid) {
             let numWaifus=2**(3-month);
             let first=450-((1-2**(4-month))/(1-2))*30+numWaifus*(day%30);
 
-            setupCoundownUI(countDownDate, (wid>=first))
+            return [countDownDate, (wid>=first)]
 }
 
-creationTimeString = "1543902712";
+const creationTimeString = "1543902712";
 
-function getWaifus(cback) {
+function getWaifus() {
     /*myContract
         .methods
         .creationTime()
@@ -53,7 +53,7 @@ function getWaifus(cback) {
                 return []
             let numWaifus=2**(3-month);
             let first=450-((1-2**(4-month))/(1-2))*30+numWaifus*(day%30);
-            cback([...Array(numWaifus).keys()].map((x)=>x+first))
+            return [...Array(numWaifus).keys()].map((x)=>x+first)
         
 }
 
@@ -116,27 +116,30 @@ var toType = function(obj) {
     return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase()
   }
 function revealAll(){
-            let day=Math.floor((new Date()-Number(creationTimeString)*1000)/(1000*24*60*60))-1;
-            let month=Math.floor(day/30);
-            if(month>3)
-                return []
-            let numWaifus=2**(3-month);
-            let first=450-((1-2**(4-month))/(1-2))*30+numWaifus*(day%30);
-            let waifusAvailable=[...Array(numWaifus).keys()].map((x)=>x+first)
+    let day=Math.floor((new Date()-Number(creationTimeString)*1000)/(1000*24*60*60))-1;
+    let month=Math.floor(day/30);
+    if(month>3)
+        return []
+    let numWaifus=2**(3-month);
+    let first=450-((1-2**(4-month))/(1-2))*30+numWaifus*(day%30);
+    let waifusAvailable=[...Array(numWaifus).keys()].map((x)=>x+first)
  
     let waifus2reveal = JSON.parse(localStorage.getItem("waifuchain"))['logbids']
     console.log(waifus2reveal)
     Object.keys(waifus2reveal).map(addr => {
         Object.keys(waifus2reveal[addr]).map(id => {
-            if(waifusAvailable.indexOf(id)<0){
-		return -1
-	    }
+            console.log(waifusAvailable)
+            if(waifusAvailable.indexOf(parseInt(id))<0){
+                return -1
+            }
+            console.log(id)
             let _values = []
             waifus2reveal[addr][id]['real'].forEach( _v => _values.push(web3.utils.toWei(_v)))
             let _fake = []
             waifus2reveal[addr][id]['fake'].forEach( _f => _fake.push(false))
             let _secret = []
             waifus2reveal[addr][id]['secret'].forEach( _s => _secret.push(_s))
+            console.log(id, _values, _fake, _secret)
             myContract
                 .methods
                 .reveal(id, _values, _fake, _secret)
@@ -160,7 +163,6 @@ function highestBidderByIDs(setupWinners){
                     .highestBidder(parseInt(id))
                     .call()
                     .then( (address) => {
-                        console.log('Highest bidder: ', address)
                         setupWinners(id, address, account)
                     })
             })
@@ -180,12 +182,17 @@ function claimWaifu(id){
         })
 }
 
+function getWaifusByAddr(addr){
+    return []
+}
+
 export {
-    setCountDown,
+    getCountDown,
     getWaifus,
     getAccount,
     startBid,
     revealAll,
     highestBidderByIDs,
-    claimWaifu
+    claimWaifu,
+    getWaifusByAddr
  };

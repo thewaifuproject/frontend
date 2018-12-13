@@ -27,13 +27,8 @@ class AuctionsHistory extends Component {
             collapse: true,
             fadeIn: true,
             timeout: 300,
-            idswaifus: []
+            idswaifus: [...Array(Api.getWaifus()[0]).keys()]
         };
-        Api.getWaifus((waifus)=>{
-            this.setState({
-                idswaifus: [...Array(waifus[0]).keys()],
-            });
-        })
     }
 
     toggle() {
