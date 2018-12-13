@@ -26,11 +26,6 @@ function getAccount(cback) {
   }) */
 
 function setCountDown(setupCoundownUI, wid) {
-    myContract
-        .methods
-        .creationTime()
-        .call()
-        .then( creationTimeString => {
             var creationTime=Number(creationTimeString);
             // Set the date we're counting down to
             let countDownDate=new Date().getTime() + (1000*24*60*60 - ((new Date().getTime() - creationTime*1000)%(1000 * 60 * 60 * 24)));
@@ -43,15 +38,15 @@ function setCountDown(setupCoundownUI, wid) {
             let first=450-((1-2**(4-month))/(1-2))*30+numWaifus*(day%30);
 
             setupCoundownUI(countDownDate, (wid>=first))
-        })
 }
+
+creationTimeString = "1543902712";
 
 function getWaifus(cback) {
     /*myContract
         .methods
         .creationTime()
         .call()*/
-        creationTimeString = "1543902712";
             let day=Math.floor((new Date()-Number(creationTimeString)*1000)/(1000*24*60*60));
             let month=Math.floor(day/30);
             if(month>3)
