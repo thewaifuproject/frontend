@@ -116,10 +116,21 @@ var toType = function(obj) {
     return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase()
   }
 function revealAll(){
+            let day=Math.floor((new Date()-Number(creationTimeString)*1000)/(1000*24*60*60))-1;
+            let month=Math.floor(day/30);
+            if(month>3)
+                return []
+            let numWaifus=2**(3-month);
+            let first=450-((1-2**(4-month))/(1-2))*30+numWaifus*(day%30);
+            let waifusAvailable=[...Array(numWaifus).keys()].map((x)=>x+first)
+ 
     let waifus2reveal = JSON.parse(localStorage.getItem("waifuchain"))['logbids']
     console.log(waifus2reveal)
     Object.keys(waifus2reveal).map(addr => {
         Object.keys(waifus2reveal[addr]).map(id => {
+            if(waifusAvailable.indexOf(id)<0){
+		return -1
+	    }
             let _values = []
             waifus2reveal[addr][id]['real'].forEach( _v => _values.push(web3.utils.toWei(_v)))
             let _fake = []
