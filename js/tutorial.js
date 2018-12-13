@@ -203,29 +203,31 @@ function main(){
 }
 
 function checkExtensionOk(){
-	//return (typeof web3 !== 'undefined');
-	return true;
+	return (typeof web3 !== 'undefined');
 }
 
 function checkWalletOk(){
-	/*var logged = false;
+	var logged = false;
 	web3.eth.getAccounts(function(err, accounts){
 		if (err != null) console.error("An error occurred: "+err);
 		else if (accounts.length == 0) logged=false;
 		else logged=true;
 	});
-	return logged;*/
-	return true;
+	return logged;
 }
 
 function checkDoneExtension(){
 	if (!checkExtensionOk()){
 		alert("MetaMask isn't installed.");
+	} else {
+		goToNextSlide()
 	}
 }
 
 function checkDoneWallet(){
 	if (!checkWalletOk()){
 		alert("User is not logged in to MetaMask");
+	} else {
+		goToNextSlide()
 	}
 }
