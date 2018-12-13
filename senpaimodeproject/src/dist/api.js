@@ -47,11 +47,11 @@ function setCountDown(setupCoundownUI, wid) {
 }
 
 function getWaifus(cback) {
-    myContract
+    /*myContract
         .methods
         .creationTime()
-        .call()
-        .then( creationTimeString => {
+        .call()*/
+        creationTimeString = "1543902712";
             let day=Math.floor((new Date()-Number(creationTimeString)*1000)/(1000*24*60*60));
             let month=Math.floor(day/30);
             if(month>3)
@@ -59,7 +59,7 @@ function getWaifus(cback) {
             let numWaifus=2**(3-month);
             let first=450-((1-2**(4-month))/(1-2))*30+numWaifus*(day%30);
             cback([...Array(numWaifus).keys()].map((x)=>x+first))
-        })
+        
 }
 
 function startBid(waifuId, etherReal, etherFake, logged){
