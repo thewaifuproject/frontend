@@ -43,6 +43,7 @@ const AuctionsHistory = React.lazy(() => import('./views/AuctionsHistory/Auction
 const WaifuMarket = React.lazy(() => import('./views/WaifuMarket/WaifuMarket'));
 const HistoryBid = React.lazy(() => import('./views/HistoryBid/HistoryBid'));
 const Roadmap = React.lazy(() => import('./views/Roadmap/Roadmap'));
+const MyWaifus = React.lazy(() => import('./views/MyWaifus/MyWaifus'));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -93,6 +94,7 @@ const routes = [
   { path: '/waifumarket', exact: true, name: 'WaifuMarket', component: WaifuMarket },
   { path: '/historybid', exact: true, name: 'HistoryBid', component: HistoryBid },
   { path: '/roadmap', exact: true, name: 'Roadmap', component: Roadmap },
+  { path: '/wallet', exact: true, name: 'MyWaifus', component: MyWaifus },
 ];
 
 export default routes;

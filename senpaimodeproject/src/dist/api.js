@@ -185,10 +185,40 @@ function claimWaifu(id){
         })
 }
 
-function getWaifusByAddr(addr){
-    //tokenOfOwnerByIndex
-    //balanceOf
-    return []
+function getWaifusByAddr(setWaifu){
+
+    getAccount((account)=>{
+        myContract
+        .methods
+        .balanceOf(account)
+        .call()
+        .then((numWaifus) => {
+            for (let i = 0; i < numWaifus; i++) {
+                myContract
+                    .methods
+                    .tokenOfOwnerByIndex(account, i)
+                    .call()
+                    .then((waifuIndex) => {
+                        setWaifu(waifuIndex)
+                    })
+            }
+        })
+    })
+    
+}
+
+function checkWeb3(){
+    console.log(!(typeof web3 !== 'undefined'))
+	return !(typeof web3 !== 'undefined');
+}
+
+function checkNetwork(netOK){
+    /*web3.version.getNetwork(function(err, networkId){
+        netOK(networkId==="4")
+    });*/
+
+    //temporal
+    netOK(true)
 }
 
 export {
@@ -199,5 +229,7 @@ export {
     revealAll,
     highestBidderByIDs,
     claimWaifu,
-    getWaifusByAddr
+    getWaifusByAddr,
+    checkWeb3,
+    checkNetwork
  };

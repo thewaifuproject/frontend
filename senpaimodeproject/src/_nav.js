@@ -33,7 +33,7 @@ export default {
     },
     {
       name: 'My waifus',
-      url: '/mywaifus',
+      url: '/wallet',
       icon: 'icon-lock',
     },
     {
@@ -76,7 +76,7 @@ export default {
           },
         },
         {
-          url: '/roadmap',
+          url: '/aichatbot',
           name: 'AI chatbot',
           badge: {
             variant: 'secondary',

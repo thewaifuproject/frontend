@@ -16,7 +16,7 @@ class NavMenu extends Component {
             <NavLink  className="items" href="https://waifuchain.moe/faq.html" target="__blank">FAQ</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink  className="items" href="#">Tutorial</NavLink>
+            <NavLink  className="items" href="https://waifuchain.moe/tutorial.html">Tutorial</NavLink>
           </NavItem>
           <NavItem className="px-3">
             <NavLink  className="items" href="https://rinkeby.opensea.io/assets/waifuchain" target="__blank">Market</NavLink>
@@ -30,4 +30,4 @@ class NavMenu extends Component {
   }
 }
 
-export default NavMenu
+export default NavMenu;

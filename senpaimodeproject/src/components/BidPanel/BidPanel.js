@@ -5,6 +5,7 @@ import { Card, CardBody, Button, InputGroup, Input, InputGroupAddon } from 'reac
 import { Col, Row, Container, Alert } from 'reactstrap';
 
 import TooltipItem from '../TooltipQuestion/TooltipQuestion'
+import Modal from '../../components/Modal/Modal'
 
 import * as Api from '../../dist/api'
 
@@ -24,10 +25,20 @@ class BidPanel extends Component {
       countdown:'-',
       alert: false,
       alertText: '',
-      active:countdown[1]
+      active:countdown[1],
+      show: false,
+      web3: true
     };
 
   }
+
+  showModal = () => {
+    this.setState({ show: true });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
+  };
 
   componentDidMount() {
     var intervalId = setInterval(this.updateCountDown, 1000);
@@ -75,9 +86,17 @@ class BidPanel extends Component {
   onInputChangeFake (e) {
     this.setState({ fakeBidValue: e.target.value });
   }
-
+  
   bid(){
-    if (parseInt(this.state.realBidValue)<=parseInt(this.state.fakeBidValue)){
+    Api.checkNetwork((n)=>this.setState({netOK:n}))
+    if (Api.checkWeb3()){
+      this.setState({ web3: false});
+      this.setState({ alert: true });
+    }/* else if (!this.state.netok){
+      this.setState({ alertText: "Oops! You are not in the correct network, change the network to Rinkeby. (In the metamask extension, top selector)" });
+      this.setState({ alert: true });
+    }*/
+    else if (parseInt(this.state.realBidValue)<=parseInt(this.state.fakeBidValue)){
       Api.startBid(this.props.wid, this.state.realBidValue, this.state.fakeBidValue, (logged) => this.setState({ alert:logged, alertText: "You are not logged in in Metamask!"}))
     } else {
       this.setState({ alertText: "Fake bid must be greater or equal than real bid." });
@@ -93,8 +112,16 @@ class BidPanel extends Component {
     return (
       <div>
         <Card outline color="secondary">
+        {/*<Modal show={this.state.show} handleClose={this.hideModal}>
+          <p>Modal</p>
+          <p>Data</p>
+        </Modal>
+        <button type="button" onClick={this.showModal}>
+          open
+      </button>*/}
             <CardBody>
                 <Container>
+                <Modal/>
                     <Row>
                       <Col xs="12" sm="6">
                       <div>
@@ -128,7 +155,7 @@ class BidPanel extends Component {
                     <Row className="countdown-row">
                       <Col>
                       <Alert color="danger" isOpen={this.state.alert} toggle={this.onDismissAlert}>
-                        {this.state.alertText}
+                        {(!this.state.web3)?<div>No wallet has been detected, do you want to know how to download one? <a href="https://waifuchain.moe/tutorial.html" target="__blank" className="alert-link">Click here to visit the tutorial!</a></div>:this.state.alertText} 
                       </Alert>
                       </Col>
                     </Row>
