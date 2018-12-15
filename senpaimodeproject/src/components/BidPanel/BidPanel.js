@@ -5,7 +5,6 @@ import { Card, CardBody, Button, InputGroup, Input, InputGroupAddon } from 'reac
 import { Col, Row, Container, Alert } from 'reactstrap';
 
 import TooltipItem from '../TooltipQuestion/TooltipQuestion'
-import Modal from '../../components/Modal/Modal'
 
 import * as Api from '../../dist/api'
 
@@ -31,14 +30,6 @@ class BidPanel extends Component {
     };
 
   }
-
-  showModal = () => {
-    this.setState({ show: true });
-  };
-
-  hideModal = () => {
-    this.setState({ show: false });
-  };
 
   componentDidMount() {
     var intervalId = setInterval(this.updateCountDown, 1000);
@@ -88,20 +79,22 @@ class BidPanel extends Component {
   }
   
   bid(){
-    Api.checkNetwork((n)=>this.setState({netOK:n}))
-    if (Api.checkWeb3()){
-      this.setState({ web3: false});
-      this.setState({ alert: true });
-    }/* else if (!this.state.netok){
-      this.setState({ alertText: "Oops! You are not in the correct network, change the network to Rinkeby. (In the metamask extension, top selector)" });
-      this.setState({ alert: true });
-    }*/
-    else if (parseInt(this.state.realBidValue)<=parseInt(this.state.fakeBidValue)){
-      Api.startBid(this.props.wid, this.state.realBidValue, this.state.fakeBidValue, (logged) => this.setState({ alert:logged, alertText: "You are not logged in in Metamask!"}))
-    } else {
-      this.setState({ alertText: "Fake bid must be greater or equal than real bid." });
-      this.setState({ alert: true });
-    }
+    Api.checkNetwork((net)=>{
+      console.log(net)
+      if (Api.checkWeb3()){
+        this.setState({ web3: false});
+        this.setState({ alert: true });
+      } else if (!net){
+        this.setState({ alertText: "Oops! You are not in the correct network, change the network to Rinkeby. (In the metamask extension, top selector)" });
+        this.setState({ alert: true });
+      }
+      else if (parseInt(this.state.realBidValue)>parseInt(this.state.fakeBidValue)){
+        this.setState({ alertText: "Fake bid must be greater or equal than real bid." });
+        this.setState({ alert: true });
+      } else {
+        Api.startBid(this.props.wid, this.state.realBidValue, this.state.fakeBidValue, (logged) => this.setState({ alert:logged, alertText: "You are not logged in in Metamask!"}))
+      }
+    })
   }
 
   onDismissAlert(){
@@ -112,16 +105,8 @@ class BidPanel extends Component {
     return (
       <div>
         <Card outline color="secondary">
-        {/*<Modal show={this.state.show} handleClose={this.hideModal}>
-          <p>Modal</p>
-          <p>Data</p>
-        </Modal>
-        <button type="button" onClick={this.showModal}>
-          open
-      </button>*/}
             <CardBody>
                 <Container>
-                <Modal/>
                     <Row>
                       <Col xs="12" sm="6">
                       <div>

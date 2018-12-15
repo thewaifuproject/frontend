@@ -206,12 +206,7 @@ function checkWeb3(){
 }
 
 function checkNetwork(netOK){
-    /*web3.version.getNetwork(function(err, networkId){
-        netOK(networkId==="4")
-    });*/
-
-    //temporal
-    netOK(true)
+    web3.eth.net.getId().then((networkId)=>netOK(networkId==4));
 }
 
 export {
