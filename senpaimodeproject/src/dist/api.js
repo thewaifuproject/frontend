@@ -15,6 +15,10 @@ if (typeof window.web3 !== 'undefined') {
 
 const myContract = new web3.eth.Contract(contract.ABI, contract.contractAddress)
 
+function getCreationTime() {
+    return Number(creationTimeString);
+}
+
 function getAccount(cback) {
     web3.eth.getAccounts()
         .then((accounts)=>{
@@ -134,7 +138,7 @@ function revealAll(){
                 .reveal(parseInt(id), _values, _fake, _secret)
                 .send({from: addr})
                 .then( () => {
-                    console.log('OK', id)
+                    console.log(parseInt(id), _values, _fake, _secret)
                 })
         })
     })
@@ -167,14 +171,16 @@ function highestBidderByIDs(setupWinners){
 }
 
 function claimWaifu(id){
-    myContract
-        .methods
-        .claimWaifu(parseInt(id))
-        .call()
-        .then(() => {
-            console.log("Claimed ", id)
-            //save
-        })
+    getAccount((account)=>{
+        myContract
+            .methods
+            .claimWaifu(parseInt(id))
+            .send({from: account})
+            .then(() => {
+                console.log("Claimed ", id)
+                //register claim
+            })
+    })
 }
 
 function getWaifusByAddr(setWaifu){
@@ -185,7 +191,7 @@ function getWaifusByAddr(setWaifu){
         .balanceOf(account)
         .call()
         .then((numWaifus) => {
-            console.log(numWaifus)
+            console.log('balanceOf(account): ', numWaifus, [account])
             for (let i = 0; i < numWaifus; i++) {
                 myContract
                     .methods
@@ -210,6 +216,7 @@ function checkNetwork(netOK){
 }
 
 export {
+    getCreationTime,
     getCountDown,
     getWaifus,
     getAccount,

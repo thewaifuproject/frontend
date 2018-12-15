@@ -8,9 +8,9 @@ import * as Api from '../../dist/api'
 
 const WaifusList = ({waifusid}) => (
     <>
-    {waifusid.forEach(idW => (
+    {waifusid.map(idW => (
         <Col lg="3" md="4" sm="6" key={idW} >
-            <WaifuCard id={idW} mainButtonText="BID" type="drop"/>
+            <WaifuCard id={idW} mainButtonText="See on the wiki" typeT="mine"/>
         </Col>
     ))}
     </>
@@ -33,7 +33,10 @@ class MyWaifus extends Component {
     
     componentDidMount(){
         Api.getWaifusByAddr((waifuIndex)=>{
-            this.setState({idswaifus:this.state.idswaifus.push(waifuIndex)})
+            this.setState({
+                idswaifus:this.state.idswaifus.concat(parseInt(waifuIndex))
+            })
+            console.log(waifuIndex)
         })
     }
 
@@ -64,7 +67,7 @@ export default MyWaifus;
 
 function myWaifus(waifusid){
     if (waifusid.length>0){
-        return <div><h1>My waifus</h1><WaifusList waifusid={waifusid}/></div>
+        return <div><h1 className="mainTitle">My waifus</h1><WaifusList waifusid={waifusid}/></div>
     } else {
         return <Col><img className="center-0waifus" src="https://api.waifuchain.moe/waifu404.jpg"></img></Col>
     }

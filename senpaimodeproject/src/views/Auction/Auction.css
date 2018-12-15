@@ -2,10 +2,6 @@
     margin-top: 2rem;
 }
 
-#waifusids2load{
-    /*display: none;*/
-}
-
 @media (max-width: 576px){
     h1 {
         text-align: center;

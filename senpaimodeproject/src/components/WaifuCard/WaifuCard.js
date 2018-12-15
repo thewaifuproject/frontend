@@ -83,7 +83,7 @@ class WaifuCard extends Component {
           </ButtonGroup>
         </CardBody>
     )
-    if (this.props.type==='drop'){
+    if (this.props.typeT==='drop'){
       cardbody = (
         <CardBody>
             <CardTitle>{this.state.waifuName}</CardTitle>
@@ -102,7 +102,17 @@ class WaifuCard extends Component {
             </ButtonGroup>
           </CardBody>
       )
-    }
+    } else if (this.props.typeT==='claim'){
+      cardbody = (
+        <CardBody>
+        <CardTitle>{this.state.waifuName}</CardTitle>
+        <CardText>{fn(this.state.waifuShortBio,50)}</CardText>
+          <ButtonGroup className="d-flex bd-highlight">
+            <Button color={this.state.buttonColor} className="p-2 flex-grow-1 bd-highlight width100" onClick={this.claim}>{this.props.mainButtonText}</Button>
+          </ButtonGroup>
+        </CardBody>
+      )
+    } 
 
     return (
       <div>

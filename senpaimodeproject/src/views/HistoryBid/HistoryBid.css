@@ -2,3 +2,13 @@
     padding: 2rem;
     background: #fff;
 }
+
+.main-table {
+    margin-top: 2rem;
+}
+
+@media (max-width: 576px){
+    h1 {
+        text-align: center;
+    }
+}

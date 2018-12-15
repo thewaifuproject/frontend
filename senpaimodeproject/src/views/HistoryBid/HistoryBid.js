@@ -18,7 +18,7 @@ const WaifusList = ({bidresults}) => (
     <>
     {bidresults.map(waifu => (
         <Col lg="3" md="4" sm="6" key={waifu['id']} >
-            <WaifuCard id={waifu['id']} mainButtonText={(waifu['own']) ? "Claim now" : ((waifu['pending']) ? "Pending" : "Lost")} typeT={(waifu['own']) ? "claim" : ((waifu['pending']) ? "pending" : "lost")}/>
+            <WaifuCard id={waifu['id']} mainButtonText={(waifu['pending']) ? "Pending" : (waifu['own']) ? "Claim now" : "Lost"} typeT={(waifu['pending']) ? "pending" : ((waifu['own']) ? "claim" : "lost")}/>       
         </Col>
     ))}
     </>
@@ -40,15 +40,32 @@ class HistoryBid extends Component {
             timeout: 300,
             bidresults: [],
             waifuslog: getBidHistory(),
-            waifuNames: {}
+            waifuNames: {},
+            endCallHighestBidder: false
         };
+
+        let day=Math.floor((new Date()-Number(Api.getCreationTime())*1000)/(1000*24*60*60))-1;
+        let month=Math.floor(day/30);
+        if(month>3)
+            return []
+        let numWaifus=2**(3-month);
+        let first=450-((1-2**(4-month))/(1-2))*30+numWaifus*(day%30);
+        let waifusAvailable=[...Array(numWaifus).keys()].map((x)=>x+first)
 
         Api.highestBidderByIDs((id, addr, account) => {
             this.setState({
-                bidresults: this.state.bidresults.concat({id:id, own:(addr===account), pending:true}),
+                bidresults: this.state.bidresults.concat({id:id, own:(addr===account), pending:(id>=waifusAvailable[0])}),
             });
         })
     }
+
+    /*  componentWillUpdate(nextProps, nextState) {
+        if (nextState.endCallHighestBidder == true) {
+            Api.getWaifusByAddr((waifuIndex)=>{
+                this.state.bidresults.forEach( (w) => console.log(w))
+            })
+        }
+    }*/
 
     componentWillMount() {
         Object.keys(this.state.waifuslog).map(addr =>
@@ -128,9 +145,9 @@ class HistoryBid extends Component {
                 </Container>
                 <h1></h1>
                 <Container className="content-container">
-                    <h1>Results</h1>
-                    <Row id="waifusOnAuciton" className="main-table">
-                    <WaifusList bidresults={this.state.bidresults} />
+                    <h1 className="main-table">Results</h1>
+                    <Row className="main-table">
+                        <WaifusList bidresults={this.state.bidresults} />
                     </Row>
                 </Container>
             </Fade>
