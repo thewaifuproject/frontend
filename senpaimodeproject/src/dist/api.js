@@ -120,7 +120,7 @@ function revealAll(){
             if(waifusAvailable.indexOf(parseInt(id))<0){
                 return -1
             }
-            
+
             let _values = []
             waifus2reveal[addr][id]['real'].forEach( _v => _values.push(web3.utils.toWei(_v)))
             let _fake = []
@@ -159,6 +159,7 @@ function highestBidderByIDs(setupWinners){
                 })
             })
         } else {
+            console.log("no storage")
             //add code to indicate that it could not load correctly
         }
     })
