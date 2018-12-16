@@ -110,7 +110,7 @@ class HistoryBid extends Component {
             rows.push()
         else
             Object.keys(this.state.waifuslog).map(addr =>
-                Object.keys(this.state.waifuslog[addr]).map(id => 
+                Object.keys(this.state.waifuslog[addr]).map(id => {
                     for(let i=0; i<this.state.waifuslog[addr][id]['real'].length; i++){
                         rows.unshift(<tr key={id}>
                             <th scope="row">{id}</th>
@@ -121,7 +121,7 @@ class HistoryBid extends Component {
                             <td>{addr}</td>
                         </tr>)
                     }
-                )
+                })
             )
         return rows
     }
