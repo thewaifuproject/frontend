@@ -97,14 +97,16 @@ class HistoryBid extends Component {
         else
             Object.keys(this.state.waifuslog).map(addr =>
                 Object.keys(this.state.waifuslog[addr]).map(id => 
-                    rows.unshift(<tr key={id}>
-                        <th scope="row">{id}</th>
-                        <td>{this.state.waifuNames[id]}</td>
-                        <td>{this.state.waifuslog[addr][id]['real']}</td>
-                        <td>{this.state.waifuslog[addr][id]['fake']}</td>
-                        <td>{this.state.waifuslog[addr][id]['secret']}</td>
-                        <td>{addr}</td>
-                    </tr>)
+                    for(let i=0; i<this.state.waifuslog[addr][id]['real'].length; i++){
+                        rows.unshift(<tr key={id}>
+                            <th scope="row">{id}</th>
+                            <td>{this.state.waifuNames[id]}</td>
+                            <td>{this.state.waifuslog[addr][id]['real'][i]}</td>
+                            <td>{this.state.waifuslog[addr][id]['fake'][i]}</td>
+                            <td>{this.state.waifuslog[addr][id]['secret'][i]}</td>
+                            <td>{addr}</td>
+                        </tr>)
+                    }
                 )
             )
         return rows
