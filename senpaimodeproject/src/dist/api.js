@@ -144,10 +144,17 @@ function revealAll(){
     })
 }
 
-function highestBidderByIDs(setupWinners){
+function highestBidderByIDs(setupWinners, checkFinish){
 
     getAccount((account)=>{
+        let totalWaifus = 0
+        let count = 0;
         let waifus2check = getLocalStorage(account)['logbids']
+        Object.keys(waifus2check).map(addr => {
+            Object.keys(waifus2check[addr]).map(id => {
+                totalWaifus++;
+            })
+        })
         if (waifus2check != null){
             console.log(waifus2check)
             Object.keys(waifus2check).map(addr => {
@@ -157,8 +164,9 @@ function highestBidderByIDs(setupWinners){
                         .highestBidder(parseInt(id))
                         .call()
                         .then( (address) => {
+                            count++
                             setupWinners(id, address, account)
-                            console.log(id, address)
+                            checkFinish(totalWaifus<=count)
                         })
                 })
             })
@@ -184,7 +192,6 @@ function claimWaifu(id){
 }
 
 function getWaifusByAddr(setWaifu){
-
     getAccount((account)=>{
         myContract
         .methods
@@ -198,13 +205,22 @@ function getWaifusByAddr(setWaifu){
                     .tokenOfOwnerByIndex(account, i)
                     .call()
                     .then((waifuIndex) => {
-                        console.log(waifuIndex)
                         setWaifu(waifuIndex)
                     })
             }
         })
     })
     
+}
+
+function sendWaifu(dest, id){
+    getAccount((account)=>{
+       myContract
+        .methods
+        .safeTransferFrom(account, dest, id)
+        .send({from: account})
+        .then(()=>console.log('safeTransferFrom', account, dest, id, 'sent'))
+    })
 }
 
 function checkWeb3(){
@@ -226,5 +242,6 @@ export {
     claimWaifu,
     getWaifusByAddr,
     checkWeb3,
-    checkNetwork
+    checkNetwork,
+    sendWaifu
  };

@@ -18,7 +18,7 @@ const WaifusList = ({bidresults}) => (
     <>
     {bidresults.map(waifu => (
         <Col lg="3" md="4" sm="6" key={waifu['id']} >
-            <WaifuCard id={waifu['id']} mainButtonText={(waifu['pending']) ? "Pending" : (waifu['own']) ? "Claim now" : "Lost"} typeT={(waifu['pending']) ? "pending" : ((waifu['own']) ? "claim" : "lost")}/>       
+            <WaifuCard id={waifu['id']} mainButtonText={(waifu['mine'])? "Mine!" : (waifu['pending']) ? "Pending" : (waifu['own']) ? "Claim now" : "See on the wiki"} typeT={(waifu['mine']) ? "mineH" : (waifu['pending']) ? "pending" : ((waifu['own']) ? "claim" : "lost")} buttonColor={(waifu['mine']) ? "success" : (waifu['pending']) ? "purple" : ((waifu['own']) ? "success" : "warning")}/>       
         </Col>
     ))}
     </>
@@ -34,6 +34,7 @@ class HistoryBid extends Component {
         this.getWaifus = this.getWaifus.bind(this)
         this.revealAll = this.revealAll.bind(this)
         this.setWaifuName = this.setWaifuName.bind(this)
+        this.setown = this.setown.bind(this)
         this.state = {
             collapse: true,
             fadeIn: true,
@@ -54,18 +55,31 @@ class HistoryBid extends Component {
 
         Api.highestBidderByIDs((id, addr, account) => {
             this.setState({
-                bidresults: this.state.bidresults.concat({id:id, own:(addr===account), pending:(id>=waifusAvailable[0])}),
+                bidresults: this.state.bidresults.concat({id:id, own:(addr===account), pending:(id>=waifusAvailable[0]), mine:false}),
             });
+        }, (fin) => {
+            this.setState({
+                endCallHighestBidder: fin
+            });
+            if (fin) {
+                this.setown()
+            }
         })
     }
 
-    /*  componentWillUpdate(nextProps, nextState) {
-        if (nextState.endCallHighestBidder == true) {
-            Api.getWaifusByAddr((waifuIndex)=>{
-                this.state.bidresults.forEach( (w) => console.log(w))
+    setown(){
+        Api.getWaifusByAddr((waifuIndex)=>{
+            this.state.bidresults.forEach((waifu, i) => {
+                if (waifu['id'] == waifuIndex){
+                    let stateresults = this.state.bidresults
+                    stateresults[i]['mine'] = true
+                    this.setState({
+                        bidresults: stateresults,
+                    });
+                }
             })
-        }
-    }*/
+        })
+    }
 
     componentWillMount() {
         Object.keys(this.state.waifuslog).map(addr =>

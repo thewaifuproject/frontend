@@ -10,7 +10,7 @@ const WaifusList = ({waifusid}) => (
     <>
     {waifusid.map(idW => (
         <Col lg="3" md="4" sm="6" key={idW} >
-            <WaifuCard id={idW} mainButtonText="BID" typeT="drop"/>
+            <WaifuCard id={idW} mainButtonText="BID" typeT="drop" buttonColor='purple'/>
         </Col>
     ))}
     </>

@@ -49,7 +49,7 @@ class TabsBidPanel extends Component {
                 <Row>
                 <Col sm="12">
                     <h4>Biography</h4>
-                    <Button outline color="primary">Know more on the wiki</Button>
+                    <a className='nostile width100' href={"https://waifu.wiki/index.php/"+this.props.waifuName.replace(' ', '_')} target='__blank'><Button outline color="primary">Know more on the wiki</Button></a>
                 </Col>
                 </Row>
             </TabPane>

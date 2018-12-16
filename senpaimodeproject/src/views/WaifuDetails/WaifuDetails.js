@@ -49,7 +49,7 @@ class WaifuDetails extends Component {
                         </Col>
                     </Row>
                     <div className='tabs-container' >
-                        <TabsBidPanel />
+                        <TabsBidPanel waifuName={(this.state.waifuName)?this.state.waifuName:''}/>
                     </div>
                 </Container>
             </Fade>
