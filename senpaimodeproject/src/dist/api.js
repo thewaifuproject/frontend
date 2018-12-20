@@ -193,6 +193,7 @@ function claimWaifu(id){
 
 function getWaifusByAddr(setWaifu){
     getAccount((account)=>{
+        if (account)
         myContract
         .methods
         .balanceOf(account)
@@ -215,6 +216,7 @@ function getWaifusByAddr(setWaifu){
 
 function sendWaifu(dest, id){
     getAccount((account)=>{
+    console.log(account, id)
        myContract
         .methods
         .safeTransferFrom(account, dest, id)

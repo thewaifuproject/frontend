@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Card, CardBody, CardImg, CardTitle, CardSubtitle, CardText } from 'reactstrap';
 import { ButtonGroup, Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { Link } from 'react-router-dom';
 import './WaifuCard.css';
+
+import ModalSend from '../../components/ModalSend/ModalSend'
 
 import * as Api from '../../dist/api'
 
@@ -87,7 +88,7 @@ class WaifuCard extends Component {
             <CardTitle>{this.state.waifuName}</CardTitle>
             <CardText>{fn(this.state.waifuShortBio,50)}</CardText>
             <ButtonGroup className="d-flex bd-highlight">
-            <Button color={this.props.buttonColor} className="p-2 flex-grow-1 bd-highlight" onClick={this.handleButtonClick}>
+            <Button id="buttontourjs" color={this.props.buttonColor} className="p-2 flex-grow-1 bd-highlight" onClick={this.handleButtonClick}>
               {this.props.mainButtonText}
             </Button>
             <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -109,7 +110,24 @@ class WaifuCard extends Component {
           </ButtonGroup>
         </CardBody>
       )
-    } 
+    } else if (this.props.typeT==='wallet'){
+      cardbody = (
+        <CardBody>
+            <CardTitle>{this.state.waifuName}</CardTitle>
+            <CardText>{fn(this.state.waifuShortBio,50)}</CardText>
+            <ButtonGroup className="d-flex bd-highlight">
+              <ModalSend mainButtonText={this.props.mainButtonText} buttonColor={this.props.buttonColor}
+              mainButtonText={this.props.mainButtonText} waifuName={this.state.waifuName} waifuID={this.props.id}/>
+              <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                <DropdownToggle color={this.props.buttonColor} caret></DropdownToggle>
+                <DropdownMenu>
+                  <a className='nostile'><DropdownItem className="pointa">Assign to... (soon available)</DropdownItem></a>
+                </DropdownMenu>
+              </ButtonDropdown>
+            </ButtonGroup>
+          </CardBody>
+      )
+    }
 
     return (
       <div>

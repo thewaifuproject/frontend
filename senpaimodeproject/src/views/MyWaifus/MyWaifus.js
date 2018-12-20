@@ -10,7 +10,7 @@ const WaifusList = ({waifusid}) => (
     <>
     {waifusid.map(idW => (
         <Col lg="3" md="4" sm="6" key={idW} >
-            <WaifuCard id={idW} mainButtonText="See on the wiki" typeT="mine" buttonColor='success'/>
+            <WaifuCard id={idW} mainButtonText="Send" typeT="wallet" buttonColor='purple'/>
         </Col>
     ))}
     </>
@@ -27,7 +27,9 @@ class MyWaifus extends Component {
             collapse: true,
             fadeIn: true,
             timeout: 300,
-            idswaifus: []
+            idswaifus: [],
+            defopen:true,
+            open:true
         };
     }
     
