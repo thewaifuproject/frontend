@@ -108,7 +108,7 @@ class BidPanel extends Component {
             <CardBody>
                 <Container>
                     <Row>
-                      <Col xs="12" sm="6">
+                      <Col xs="12" sm="6" id="bidreal">
                       <div>
                         Real bid &nbsp;
                         <TooltipItem pos='right' id='realq' text={tip_realbid}/>
@@ -118,7 +118,7 @@ class BidPanel extends Component {
                         <InputGroupAddon addonType="append">ETH</InputGroupAddon>
                       </InputGroup>
                       </Col>
-                      <Col xs="12" sm="6">
+                      <Col xs="12" sm="6" id="bidfake">
                       <div>
                         Fake bid &nbsp;
                         <TooltipItem pos='right' id='fakeq' text={tip_fakebid}/>
@@ -129,7 +129,7 @@ class BidPanel extends Component {
                         </InputGroup>
                       </Col>
                     </Row>
-                    <Row className="countdown-row">
+                    <Row id="bidtimer" className="countdown-row">
                       <Col>
                         <div className="float-left">
                           <span>Auction ends in:</span>

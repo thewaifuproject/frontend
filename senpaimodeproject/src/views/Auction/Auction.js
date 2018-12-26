@@ -3,6 +3,8 @@ import WaifuCard from '../../components/WaifuCard/WaifuCard'
 import { Fade, Col, Row, Container } from 'reactstrap';
 import Tour from 'reactour'
 
+import {steps} from '../../tour'
+
 import './Auction.css'
 
 import * as Api from '../../dist/api'
@@ -10,7 +12,7 @@ import * as Api from '../../dist/api'
 const WaifusList = ({waifusid}) => (
     <>
     {waifusid.map(idW => (
-        <Col lg="3" md="4" sm="6" key={idW} >
+        <Col id="colcard" lg="3" md="4" sm="6" key={idW} >
             <WaifuCard id={idW} mainButtonText="BID" typeT="drop" buttonColor='purple'/>
         </Col>
     ))}
@@ -63,31 +65,15 @@ class Auction extends Component {
                 isOpen={this.state.isTourOpen}
                 onRequestClose={this.closeTour}
                 closeWithMask={false}
+                showNumber={false}
+                showNavigationNumber={false}
+                showNavigation={false}
+                showButtons={false}
             />
             </div>
         )
     }
 }
-
-const steps = [
-    {
-        selector: '#nothing',
-        content: ({ goTo, inDOM }) => (
-            <div>
-                <p>Welcome!</p>
-                <button onClick={() => goTo(1)}>Start tutorial</button>
-            </div>
-          ),
-    },
-    {
-        selector: '#buttontourjs',
-        content: 'Press here to go to the bid panel',
-    },
-    {
-        selector: 'WaifuCard',
-        content: 'This is all',
-    },
-  ]
 
 export default Auction;
 
