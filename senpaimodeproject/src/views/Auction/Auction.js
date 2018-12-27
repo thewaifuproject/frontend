@@ -6,6 +6,7 @@ import Tour from 'reactour'
 import {steps} from '../../tour'
 
 import './Auction.css'
+import '../../tourHelper.css'
 
 import * as Api from '../../dist/api'
 
@@ -69,6 +70,8 @@ class Auction extends Component {
                 showNavigationNumber={false}
                 showNavigation={false}
                 showButtons={false}
+                className="tourHelper"
+                showCloseButton={false}
             />
             </div>
         )

@@ -129,8 +129,8 @@ class BidPanel extends Component {
                         </InputGroup>
                       </Col>
                     </Row>
-                    <Row id="bidtimer" className="countdown-row">
-                      <Col>
+                    <Row className="countdown-row">
+                      <Col id="bidtimer">
                         <div className="float-left">
                           <span>Auction ends in:</span>
                           <h2>{this.state.countdown}</h2>

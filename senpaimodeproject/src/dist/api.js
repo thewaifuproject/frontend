@@ -233,6 +233,16 @@ function checkNetwork(netOK){
     web3.eth.net.getId().then((networkId)=>netOK(networkId==4));
 }
 
+function withdraw(){
+    getAccount((account)=>{
+        myContract
+            .methods
+            .withdraw()
+            .send({from: account})
+            .then(()=> console.log('ok'))
+    })
+}
+
 export {
     getCreationTime,
     getCountDown,
@@ -245,5 +255,6 @@ export {
     getWaifusByAddr,
     checkWeb3,
     checkNetwork,
-    sendWaifu
+    sendWaifu,
+    withdraw
  };

@@ -29,6 +29,7 @@ class HistoryBid extends Component {
     constructor(props) {
         super(props);
 
+        this.withdraw = this.withdraw.bind(this);
         this.toggle = this.toggle.bind(this);
         this.toggleFade = this.toggleFade.bind(this);
         this.getWaifus = this.getWaifus.bind(this)
@@ -130,6 +131,10 @@ class HistoryBid extends Component {
         Api.revealAll();
     }
 
+    withdraw() {
+        Api.withdraw();
+    }
+
     setWaifuName(id, name){
         let temp = this.state.waifuNames
         temp[id] = name
@@ -158,6 +163,8 @@ class HistoryBid extends Component {
                         </tbody>
                     </Table>
                     <Button color="success" onClick={this.revealAll}>REVEAL ALL</Button>
+                    &nbsp;&nbsp;
+                    <Button color="success" onClick={this.withdraw}>WITHDRAW</Button>
                 </Container>
                 <h1></h1>
                 <Container className="content-container">

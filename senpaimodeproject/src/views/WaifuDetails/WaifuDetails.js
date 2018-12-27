@@ -5,6 +5,7 @@ import BidPanel from '../../components/BidPanel/BidPanel'
 import TabsBidPanel from '../../components/TabsBidPanel/TabsBidPanel'
 import './WaifuDetails.css'
 
+import '../../tourHelper.css'
 import Tour from 'reactour'
 
 import { stepsWaifuDetail } from '../../tour'
@@ -47,8 +48,8 @@ class WaifuDetails extends Component {
         return (
             <div>
                 <Fade timeout={this.state.timeout} in={this.state.fadeIn}>
-                    <Container className="_main-container">
-                        <Row id="bidcont">
+                    <Container id="bidcont" className="_main-container">
+                        <Row>
                             <Col className="image-container" xs="12" md="4">
                                 <h1>{this.state.waifuName}</h1>
                                 <img width="100%" src={this.state.waifuImage} />
@@ -77,6 +78,8 @@ class WaifuDetails extends Component {
                     showNavigationNumber={false}
                     showNavigation={false}
                     showButtons={false}
+                    className="tourHelper"
+                    showCloseButton={false}
                 />
             </div>
         )
