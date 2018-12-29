@@ -57,12 +57,13 @@ function getWaifus() {
     return [...Array(numWaifus).keys()].map((x)=>x+first)
 }
 
-function startBid(waifuId, etherReal, etherFake, logged){
+function startBid(waifuId, etherReal, etherFake, logged, disableBid){
     web3.eth.getAccounts()
         .then((accounts)=>{
             logged(!accounts.length)
             if (accounts.length){
                 console.log(accounts[0], waifuId, etherReal, etherFake)
+                disableBid()
                 bid(accounts[0], waifuId, etherReal, etherFake)
             }
         })
@@ -107,7 +108,7 @@ function saveBidData(account, nid, nreal, nfake, nsecret){
     }
 }
 
-function revealAll(){
+function revealAll(startTutorialDone){
     let day=Math.floor((new Date()-Number(creationTimeString)*1000)/(1000*24*60*60))-1;
     let month=Math.floor(day/30);
     if(month>3)
@@ -117,7 +118,18 @@ function revealAll(){
     let waifusAvailable=[...Array(numWaifus).keys()].map((x)=>x+first)
  
     let waifus2reveal = JSON.parse(window.localStorage.getItem("waifuchain"))['logbids']
-    console.log(waifus2reveal)
+
+    let numReveals = 0
+
+    Object.keys(waifus2reveal).map(addr => {
+        Object.keys(waifus2reveal[addr]).map(id => {
+            if(waifusAvailable.indexOf(parseInt(id))<0){
+                return -1
+            }
+            numReveals++
+        })
+    })
+    let control=0
     Object.keys(waifus2reveal).map(addr => {
         Object.keys(waifus2reveal[addr]).map(id => {
             console.log(waifusAvailable)
@@ -133,14 +145,19 @@ function revealAll(){
             waifus2reveal[addr][id]['secret'].forEach( _s => _secret.push(_s))
             console.log('Reveal params: ', parseInt(id), _values, _fake, _secret)
 
+
             myContract
                 .methods
                 .reveal(parseInt(id), _values, _fake, _secret)
                 .send({from: addr})
                 .then( () => {
                     console.log(parseInt(id), _values, _fake, _secret)
-                })
-        })
+                }).on('transactionHash', (hash)=>{
+                    control++
+                    if(control>=numReveals)
+                        startTutorialDone()
+                });
+            })
     })
 }
 
@@ -226,11 +243,12 @@ function sendWaifu(dest, id){
 }
 
 function checkWeb3(){
-	return !(typeof web3 !== 'undefined');
+	return (typeof web3 !== 'undefined');
 }
 
 function checkNetwork(netOK){
-    web3.eth.net.getId().then((networkId)=>netOK(networkId==4));
+    web3.eth.net.getId().then((networkId)=>{netOK(networkId==4)
+    console.log(networkId)});
 }
 
 function withdraw(){

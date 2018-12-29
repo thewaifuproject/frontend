@@ -63,8 +63,8 @@ class DefaultHeader extends Component {
           </AppHeaderDropdown>*/}
           </Nav>
         <NavMenu />
-        {/*<AppAsideToggler className="d-md-down-none" />*/}
-        {/*<AppAsideToggler className="d-lg-none" mobile />*/}
+        <AppAsideToggler className="d-md-down-none" />{/*<Badge pill color="danger">0</Badge>*/}
+        <AppAsideToggler className="d-lg-none" mobile />
       </React.Fragment>
     );
   }

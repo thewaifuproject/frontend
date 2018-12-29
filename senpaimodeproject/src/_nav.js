@@ -60,6 +60,10 @@ export default {
       icon: 'icon-magnifier',
       children: [
         {
+          name: 'MetaMask Tutorial',
+          url: 'https://waifuchain.moe/tutorial'
+        },
+        {
           name: 'Waifu Wiki',
           url: 'https://waifu.wiki',
           badge: {
@@ -68,7 +72,7 @@ export default {
           },
         },
         {
-          url: '/waifubot',
+          url: 'https://waifuchain.moe/senpaimode',
           name: 'WaifuBot',
           badge: {
             variant: 'secondary',
@@ -76,7 +80,7 @@ export default {
           },
         },
         {
-          url: '/aichatbot',
+          url: 'https://waifuchain.moe/senpaimode',
           name: 'AI chatbot',
           badge: {
             variant: 'secondary',

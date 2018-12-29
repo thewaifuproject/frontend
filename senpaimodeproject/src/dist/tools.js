@@ -33,14 +33,69 @@ export const makeCancelable = (promise) => {
 export function getLocalStorage(account){
     if (window.localStorage){
         if (window.localStorage.getItem("waifuchain")==null){
-            window.localStorage.setItem("waifuchain", JSON.stringify({ 'logbids' : { } }))
+            window.localStorage.setItem("waifuchain", JSON.stringify({
+                'logbids' : {},
+                'tutorial': {
+                    'auction':true,
+                    'bid':true,
+                    'beforeReveal':true,
+                    'afterReveal':true
+                }
+            }))
         }
         let wchainStorage = JSON.parse(window.localStorage.getItem("waifuchain"))
-        if (!wchainStorage['logbids'].hasOwnProperty(account)){
+        if (!wchainStorage['logbids'].hasOwnProperty(account) && account){
             wchainStorage['logbids'][account] = {}
         }
         return wchainStorage;
     } else {
         return null;
+    }
+}
+
+export function startTutorial(){
+    let wstorage = getLocalStorage()
+    wstorage['tutorial'] = {
+        'auction':true,
+        'bid':true,
+        'beforeReveal':true,
+        'afterReveal':true
+    }
+    window.localStorage.setItem("waifuchain", JSON.stringify(wstorage))
+}
+
+export function checkTutorial(n){
+    if (!getLocalStorage()['tutorial']){
+        let wstorage = getLocalStorage()
+        wstorage['tutorial'] = {
+            'auction':true,
+            'bid':true,
+            'beforeReveal':true,
+            'afterReveal':true
+        }
+        window.localStorage.setItem("waifuchain", JSON.stringify(wstorage))
+    }
+
+    switch(n){
+        case 'auction': return getLocalStorage()['tutorial'][n]
+        case 'bid': return (getLocalStorage()['tutorial'][n] && !getLocalStorage()['tutorial']['auction'])
+        case 'beforeReveal': return (getLocalStorage()['tutorial'][n] && !getLocalStorage()['tutorial']['auction']
+                                                                        && !getLocalStorage()['tutorial']['bid'])
+        case 'afterReveal': return (getLocalStorage()['tutorial'][n] && !getLocalStorage()['tutorial']['auction']
+                                                                        && !getLocalStorage()['tutorial']['bid']
+                                                                        && !getLocalStorage()['tutorial']['beforeReveal'])
+        default : return getLocalStorage()['tutorial'][n]
+    }
+
+    
+}
+
+export function disableTurorial(n){
+    let wchainStorage = getLocalStorage()
+    if (wchainStorage) {
+        wchainStorage['tutorial'][n]=false
+        window.localStorage.setItem('waifuchain', JSON.stringify(wchainStorage));
+    } else {
+        //TODO: CHECK before bid if window.localStorage is accesible
     }
 }

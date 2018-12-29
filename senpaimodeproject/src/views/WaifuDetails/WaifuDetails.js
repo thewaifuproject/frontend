@@ -11,18 +11,24 @@ import Tour from 'reactour'
 import { stepsWaifuDetail } from '../../tour'
 
 import * as Api from '../../dist/api'
+import * as Tools from '../../dist/tools'
 
 class WaifuDetails extends Component {
 
     constructor(props) {
         super(props);
         
+        this.checkTutorial = this.checkTutorial.bind(this)
         this.closeTour = this.closeTour.bind(this)
         this.state = {
             waifuId: this.props.match.params.id,
             isTourOpen: true
         };
 
+    }
+
+    checkTutorial(){
+        return Tools.checkTutorial('bid');
     }
 
     closeTour(){
@@ -69,7 +75,7 @@ class WaifuDetails extends Component {
                         </div>
                     </Container>
                 </Fade>
-                <Tour
+                {(!this.checkTutorial()) ? (null) : (<Tour
                     steps={stepsWaifuDetail}
                     isOpen={this.state.isTourOpen}
                     onRequestClose={this.closeTour}
@@ -80,7 +86,7 @@ class WaifuDetails extends Component {
                     showButtons={false}
                     className="tourHelper"
                     showCloseButton={false}
-                />
+                />)}
             </div>
         )
     }

@@ -3,6 +3,10 @@ import { Nav, NavItem, NavLink, Progress, TabContent, TabPane, ListGroup, ListGr
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { AppSwitch } from '@coreui/react'
+import { Button } from 'reactstrap';
+import Tooltips from '../../views/Base/Tooltips/Tooltips';
+
+import * as Tools from '../../dist/tools'
 
 const propTypes = {
   children: PropTypes.node,
@@ -15,6 +19,7 @@ class DefaultAside extends Component {
   constructor(props) {
     super(props);
 
+    this.startTutorial = this.startTutorial.bind(this);
     this.toggle = this.toggle.bind(this);
     this.state = {
       activeTab: '1',
@@ -29,6 +34,11 @@ class DefaultAside extends Component {
     }
   }
 
+  startTutorial(){
+    Tools.startTutorial()
+    window.location=''
+  }
+
   render() {
 
     // eslint-disable-next-line
@@ -37,7 +47,7 @@ class DefaultAside extends Component {
     return (
       <React.Fragment>
         <Nav tabs>
-          <NavItem>
+          {/**<NavItem>
             <NavLink className={classNames({ active: this.state.activeTab === '1' })}
                      onClick={() => {
                        this.toggle('1');
@@ -45,7 +55,7 @@ class DefaultAside extends Component {
               <i className="icon-social-twitter"></i>
             </NavLink>
           </NavItem>
-          {/**<NavItem>
+          <NavItem>
             <NavLink className={classNames({ active: this.state.activeTab === '2' })}
                      onClick={() => {
                        this.toggle('2');
@@ -65,9 +75,9 @@ class DefaultAside extends Component {
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
             <ListGroup className="list-group-accent" tag={'div'}>
-              <ListGroupItem className="list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Last #Waifu tweets</ListGroupItem>
-              <ListGroupItem action tag="a" href="#" className="list-group-item-accent-warning list-group-item-divider">
-                <div className="avatar float-right">
+              <ListGroupItem className="list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">More</ListGroupItem>
+              <ListGroupItem action tag="a" href="#" className="list-group-item-accent-warning list-group-item-divider" onClick={this.startTutorial}>
+                {/**<div className="avatar float-right">
                   <img className="img-avatar" src="assets/img/avatars/7.jpg" alt="admin@bootstrapmaster.com"></img>
                 </div>
                 <div>Vamos a <strong>enrollarnos</strong> #waifus</div>
@@ -76,11 +86,15 @@ class DefaultAside extends Component {
                 </small>
                 <small className="text-muted">
                   <i className="icon-location-pin"></i> Cerdanyola
-                </small>
+                </small>*/}
+                Start tutorial
               </ListGroupItem>
+              {/*<ListGroupItem action tag="a" href="#" className="list-group-item-accent-warning list-group-item-divider" onClick={console.log("Be patient")}>
+                Export bids (soon)
+              </ListGroupItem>*/}
             </ListGroup>
           </TabPane>
-          <TabPane tabId="2" className="p-3">
+          {/*<TabPane tabId="2" className="p-3">
             <div className="message">
               <div className="py-3 pb-5 mr-3 float-left">
                 <div className="avatar">
@@ -236,7 +250,7 @@ class DefaultAside extends Component {
             </div>
             <Progress className="progress-xs" color="success" value="10" />
             <small className="text-muted">25GB/256GB</small>
-          </TabPane>
+            </TabPane>*/}
         </TabContent>
       </React.Fragment>
     );

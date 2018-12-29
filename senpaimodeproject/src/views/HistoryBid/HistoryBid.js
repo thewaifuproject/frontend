@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Fade, Container, Table, Button, Col, Row } from 'reactstrap';
 import WaifuCard from '../../components/WaifuCard/WaifuCard'
-
+import Tour from 'reactour'
+import {stepsAfterReveal, stepsBeforeReveal} from '../../tour_bid'
+import '../../tourHelper.css'
 import './HistoryBid.css'
 
 import * as Api from '../../dist/api'
+import * as Tools from '../../dist/tools'
 
 function getBidHistory(){
     var log = JSON.parse(localStorage.getItem("waifuchain"))
@@ -29,6 +32,8 @@ class HistoryBid extends Component {
     constructor(props) {
         super(props);
 
+        this.checkTutorial = this.checkTutorial.bind(this)
+        this.closeTour = this.closeTour.bind(this)
         this.withdraw = this.withdraw.bind(this);
         this.toggle = this.toggle.bind(this);
         this.toggleFade = this.toggleFade.bind(this);
@@ -43,7 +48,9 @@ class HistoryBid extends Component {
             bidresults: [],
             waifuslog: getBidHistory(),
             waifuNames: {},
-            endCallHighestBidder: false
+            endCallHighestBidder: false,
+            isTourOpen: true,
+            doneReveal: false
         };
 
         let day=Math.floor((new Date()-Number(Api.getCreationTime())*1000)/(1000*24*60*60))-1;
@@ -66,6 +73,20 @@ class HistoryBid extends Component {
                 this.setown()
             }
         })
+    }
+
+    getSteps(){
+        return (this.state.doneReveal) ? stepsAfterReveal : stepsBeforeReveal
+    }
+
+    checkTutorial(n){
+        console.log('called')
+        return Tools.checkTutorial(n);
+    }
+
+    closeTour(){
+        this.setState({isTourOpen:false})
+        Tools.disableTurorial((!this.state.doneReveal) ? 'beforeReveal' : 'afterReveal');
     }
 
     setown(){
@@ -128,7 +149,9 @@ class HistoryBid extends Component {
     }
 
     revealAll() {
-        Api.revealAll();
+        Api.revealAll(()=>{
+            this.setState({doneReveal:true, isTourOpen:true})
+        });
     }
 
     withdraw() {
@@ -147,7 +170,7 @@ class HistoryBid extends Component {
             <Fade timeout={this.state.timeout} in={this.state.fadeIn}>
                 <Container className="content-container">
                     <h1>History bid</h1>
-                    <Table hover responsive>
+                    <Table hover responsive className="tablestyle">
                         <thead>
                             <tr>
                                 <th>Waifu ID</th>
@@ -174,6 +197,19 @@ class HistoryBid extends Component {
                     </Row>
                 </Container>
             </Fade>
+            {(!this.checkTutorial((!this.state.doneReveal) ? 'beforeReveal' : 'afterReveal')) ? (null) : (<Tour
+                steps={this.getSteps()}
+                isOpen={this.state.isTourOpen}
+                onRequestClose={this.closeTour}
+                closeWithMask={false}
+                showNumber={false}
+                showNavigationNumber={false}
+                showNavigation={false}
+                showButtons={false}
+                className="tourHelper"
+                showCloseButton={false}
+                startAt={0}
+            />)}
             </div>
         )
     }

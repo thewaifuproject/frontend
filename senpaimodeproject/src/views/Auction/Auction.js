@@ -9,6 +9,7 @@ import './Auction.css'
 import '../../tourHelper.css'
 
 import * as Api from '../../dist/api'
+import * as Tools from '../../dist/tools'
 
 const WaifusList = ({waifusid}) => (
     <>
@@ -17,7 +18,6 @@ const WaifusList = ({waifusid}) => (
             <WaifuCard id={idW} mainButtonText="BID" typeT="drop" buttonColor='purple'/>
         </Col>
     ))}
-    {console.log(waifusid)}
     </>
 );
 
@@ -26,6 +26,7 @@ class Auction extends Component {
     constructor(props) {
         super(props);
 
+        this.checkTutorial = this.checkTutorial.bind(this)
         this.closeTour = this.closeTour.bind(this)
         this.toggle = this.toggle.bind(this);
         this.toggleFade = this.toggleFade.bind(this);
@@ -38,8 +39,13 @@ class Auction extends Component {
         };
     }
 
+    checkTutorial(){
+        return Tools.checkTutorial('auction');
+    }
+
     closeTour(){
         this.setState({isTourOpen:false})
+        Tools.disableTurorial('auction');
     }
 
     toggle() {
@@ -61,7 +67,7 @@ class Auction extends Component {
                     </Row>
                 </Container>
             </Fade>
-            <Tour
+            {(!this.checkTutorial()) ? (null) : (<Tour
                 steps={steps}
                 isOpen={this.state.isTourOpen}
                 onRequestClose={this.closeTour}
@@ -72,7 +78,7 @@ class Auction extends Component {
                 showButtons={false}
                 className="tourHelper"
                 showCloseButton={false}
-            />
+            />)}
             </div>
         )
     }
