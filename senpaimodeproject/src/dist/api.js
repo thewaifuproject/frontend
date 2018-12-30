@@ -161,6 +161,25 @@ function revealAll(startTutorialDone){
     })
 }
 
+function setProfile(waifuId, network, username){
+    let profile;
+    let normalizedUsername=username.trim().replace(/^@+/gm,'');
+    getAccount((account)=>{
+        switch(network){
+	    case "Discord":
+		profile="discordapp.com"+"/"+normalizedUsername;
+		break;
+	    case "Twitter":
+		profile="twitter.com"+"/"+normalizedUsername;
+		break;
+	}
+        myContract
+            .methods
+            .setWaifuProfile(parseInt(waifuId), profile)
+            .send({from: account});
+    });
+}
+
 function highestBidderByIDs(setupWinners, checkFinish){
 
     getAccount((account)=>{
