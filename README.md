@@ -2,11 +2,11 @@
 
 ## Setup
 ```
-npm install -g browserify #Install browserify
+cd senpaimodeproject
 npm install #Install dependencies
 ```
 
 ## Build
 ```
-bash build.sh #Build scripts
+npm run build
 ```
