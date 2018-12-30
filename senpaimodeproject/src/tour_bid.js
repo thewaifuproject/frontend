@@ -3,11 +3,14 @@ import { Col, Row } from 'reactstrap';
 import './tour.css'
 import './swiper.css'
 
+import * as Tools from './dist/tools'
+
 const stepsBeforeReveal = [
     {
         selector: '#nothing',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('beforeReveal');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -32,8 +35,9 @@ const stepsBeforeReveal = [
     },
     {
         selector: '#nothing',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('beforeReveal');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -60,6 +64,7 @@ const stepsBeforeReveal = [
         selector: '#nothing',
         content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('beforeReveal');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -86,8 +91,9 @@ const stepsBeforeReveal = [
     },
     {
         selector: '#nothing',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('beforeReveal');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -112,8 +118,9 @@ const stepsBeforeReveal = [
     },
     {
         selector: '#nothing',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('beforeReveal');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -138,8 +145,9 @@ const stepsBeforeReveal = [
     },
     {
         selector: '#nothing',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('beforeReveal');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -165,8 +173,9 @@ const stepsBeforeReveal = [
     },
     {
         selector: '#waifusOnAuciton',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('beforeReveal');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -192,8 +201,9 @@ const stepsBeforeReveal = [
     },
     {
         selector: '#waifusOnAuciton',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('beforeReveal');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -219,8 +229,9 @@ const stepsBeforeReveal = [
     },
     {
         selector: '#colcard',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('beforeReveal');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -246,8 +257,9 @@ const stepsBeforeReveal = [
     },
     {
         selector: '#buttontourjs',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('beforeReveal');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -273,8 +285,9 @@ const stepsBeforeReveal = [
     },
     {
         selector: '#bidcont',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('beforeReveal');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -301,6 +314,7 @@ const stepsBeforeReveal = [
         selector: '#bidcont',
         content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('beforeReveal');close();}}>✖</a>
             <div className="blog-slider__wrp swiper-wrapper">
                 <div className="blog-slider__item swiper-slide">
                     <div className="blog-slider__img">
@@ -328,8 +342,9 @@ const stepsBeforeReveal = [
 const stepsAfterReveal = [
     {
         selector: '#bidcont',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('afterReveal');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -354,8 +369,9 @@ const stepsAfterReveal = [
     },
     {
         selector: '#bidcont',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('afterReveal');close();}}>✖</a>
             <div className="blog-slider__wrp swiper-wrapper">
                 <div className="blog-slider__item swiper-slide">
                     <div className="blog-slider__img">
@@ -381,8 +397,9 @@ const stepsAfterReveal = [
     },
     {
         selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('afterReveal');close();}}>✖</a>
             <div className="blog-slider__wrp swiper-wrapper">
                 <div className="blog-slider__item swiper-slide">
                     <div className="blog-slider__img">
@@ -408,8 +425,9 @@ const stepsAfterReveal = [
     },
     {
         selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('afterReveal');close();}}>✖</a>
             <div className="blog-slider__wrp swiper-wrapper">
                 <div className="blog-slider__item swiper-slide">
                     <div className="blog-slider__img">
@@ -434,8 +452,9 @@ const stepsAfterReveal = [
     },
     {
         selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('afterReveal');close();}}>✖</a>
             <div className="blog-slider__wrp swiper-wrapper">
                 <div className="blog-slider__item swiper-slide">
                     <div className="blog-slider__img">
@@ -461,8 +480,9 @@ const stepsAfterReveal = [
     },
     {
         selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('afterReveal');close();}}>✖</a>
             <div className="blog-slider__wrp swiper-wrapper">
                 <div className="blog-slider__item swiper-slide">
                     <div className="blog-slider__img">
@@ -487,8 +507,9 @@ const stepsAfterReveal = [
     },
     {
         selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('afterReveal');close();}}>✖</a>
             <div className="blog-slider__wrp swiper-wrapper">
                 <div className="blog-slider__item swiper-slide">
                     <div className="blog-slider__img">
@@ -513,8 +534,9 @@ const stepsAfterReveal = [
     },
     {
         selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('afterReveal');close();}}>✖</a>
             <div className="blog-slider__wrp swiper-wrapper">
                 <div className="blog-slider__item swiper-slide">
                     <div className="blog-slider__img">
@@ -539,8 +561,9 @@ const stepsAfterReveal = [
     },
     {
         selector: '#bidreal',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('afterReveal');close();}}>✖</a>
             <div className="blog-slider__wrp swiper-wrapper">
                 <div className="blog-slider__item swiper-slide">
                     <div className="blog-slider__img">
@@ -567,8 +590,9 @@ const stepsAfterReveal = [
     },
     {
         selector: '#bidfake',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('afterReveal');close();}}>✖</a>
             <div className="blog-slider__wrp swiper-wrapper">
                 <div className="blog-slider__item swiper-slide">
                     <div className="blog-slider__img">
@@ -595,6 +619,7 @@ const stepsAfterReveal = [
         selector: '#bidtimer',
         content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('afterReveal');close();}}>✖</a>
             <div className="blog-slider__wrp swiper-wrapper">
                 <div className="blog-slider__item swiper-slide">
                     <div className="blog-slider__img">

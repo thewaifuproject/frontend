@@ -96,7 +96,7 @@ class BidPanel extends Component {
         } else {
           Api.startBid(this.props.wid, this.state.realBidValue, this.state.fakeBidValue, (logged) => this.setState({ alert:logged, alertText: "You are not logged in in Metamask!"}),
           ()=>{
-            Tools.disableTurorial('bid');
+            Tools.disableTutorial('bid');
           })
         }
       })

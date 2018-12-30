@@ -45,7 +45,7 @@ class Auction extends Component {
 
     closeTour(){
         this.setState({isTourOpen:false})
-        Tools.disableTurorial('auction');
+        Tools.disableTutorial('auction');
     }
 
     toggle() {

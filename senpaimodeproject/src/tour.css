@@ -4,6 +4,26 @@
     box-sizing: border-box;
 }
 
+a.close-thik {
+  text-decoration: none !important;
+}
+
+.close-thik {
+  cursor: pointer;
+  color: #777 !important;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  right: 17px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  top: 17px;
+}
+
+.close-thik:hover {
+  color: rgb(80, 80, 80) !important;
+
+}
+
 #discordbutton{
   background: url("https://waifuchain.moe/images/Discord-Logo-White.svg");
   background-color: #9b9eaa;

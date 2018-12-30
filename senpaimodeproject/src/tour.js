@@ -3,16 +3,19 @@ import { Col, Row } from 'reactstrap';
 import './tour.css'
 import './swiper.css'
 
+import * as Tools from './dist/tools'
+
 const steps = [
     {
         selector: '#nothing',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('auction');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
                             <div className='box'>
-                            <img src="chain.jpg" />
+                                <img src="chain.jpg" />
                                 <div className='title'>Chain</div>
                                 <div className="prepare_wave">
                                     <div className='wave -one'></div>
@@ -32,13 +35,14 @@ const steps = [
     },
     {
         selector: '#nothing',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('auction');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
                             <div className='box'>
-                               <img src="chain.jpg" />
+                                <img src="chain.jpg" />
                                 <div className='title'>Chain</div>
                                 <div className="prepare_wave">
                                     <div className='wave -one'></div>
@@ -60,11 +64,12 @@ const steps = [
         selector: '#nothing',
         content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('auction');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
                             <div className='box'>
-                               <img src="chain.jpg" />
+                                <img src="chain.jpg" />
                                 <div className='title'>Chain</div>
                                 <div className="prepare_wave">
                                     <div className='wave -one'></div>
@@ -77,7 +82,7 @@ const steps = [
                             <div class="blog-slider__text" id="dialog">You can skip the tutorial. But I don’t recommend it, what I will explain is SUPER important, plus, just letting you know, I’m an awesome teacher.</div>
                             <a class="blog-slider__button" onClick={() => goTo(3)}>Teach me Sensei</a>
                             <p class="blog-slider__button skipbutton" onClick={() => close()}>Skip</p>
-                            <br/><br/><br/><br/><br/>
+                            <br /><br /><br /><br /><br />
                         </div>
                     </div>
                 </div>
@@ -86,13 +91,14 @@ const steps = [
     },
     {
         selector: '#nothing',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('auction');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
                             <div className='box'>
-                               <img src="chain.jpg" />
+                                <img src="chain.jpg" />
                                 <div className='title'>Chain</div>
                                 <div className="prepare_wave">
                                     <div className='wave -one'></div>
@@ -112,13 +118,14 @@ const steps = [
     },
     {
         selector: '#nothing',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('auction');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
                             <div className='box'>
-                               <img src="chain.jpg" />
+                                <img src="chain.jpg" />
                                 <div className='title'>Chain</div>
                                 <div className="prepare_wave">
                                     <div className='wave -one'></div>
@@ -138,13 +145,14 @@ const steps = [
     },
     {
         selector: '#nothing',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('auction');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
                             <div className='box'>
-                               <img src="chain.jpg" />
+                                <img src="chain.jpg" />
                                 <div className='title'>Chain</div>
                                 <div className="prepare_wave">
                                     <div className='wave -one'></div>
@@ -164,13 +172,14 @@ const steps = [
     },
     {
         selector: '#waifusOnAuciton',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('auction');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
                             <div className='box'>
-                               <img src="chain.jpg" />
+                                <img src="chain.jpg" />
                                 <div className='title'>Chain</div>
                                 <div className="prepare_wave">
                                     <div className='wave -one'></div>
@@ -190,13 +199,14 @@ const steps = [
     },
     {
         selector: '#waifusOnAuciton',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('auction');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
                             <div className='box'>
-                               <img src="chain.jpg" />
+                                <img src="chain.jpg" />
                                 <div className='title'>Chain</div>
                                 <div className="prepare_wave">
                                     <div className='wave -one'></div>
@@ -208,7 +218,7 @@ const steps = [
                         <div class="blog-slider__content">
                             <div class="blog-slider__text" id="dialog">In here, you can see all the waifus that are being auctioned today. They change every 24h, so make sure to check it out frequently!</div>
                             <a class="blog-slider__button" onClick={() => goTo(8)}>Gottit</a>
-                            <br/><br/><br/><br/><br/>
+                            <br /><br /><br /><br /><br />
                         </div>
                     </div>
                 </div>
@@ -217,8 +227,9 @@ const steps = [
     },
     {
         selector: '#colcard',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('auction');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
@@ -240,16 +251,20 @@ const steps = [
                 </div>
             </div>
         ),
+        action: () => {
+            Tools.disableTutorial('auction');
+        },
     },
     {
         selector: '#buttontourjs',
         content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('auction');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
                             <div className='box'>
-                               <img src="chain.jpg" />
+                                <img src="chain.jpg" />
                                 <div className='title'>Chain</div>
                                 <div className="prepare_wave">
                                     <div className='wave -one'></div>
@@ -272,13 +287,14 @@ const steps = [
 const stepsWaifuDetail = [
     {
         selector: '#bidcont',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
                 <div className="blog-slider__wrp swiper-wrapper">
                     <div className="blog-slider__item swiper-slide">
                         <div className="blog-slider__img">
                             <div className='box'>
-                               <img src="chain.jpg" />
+                                <img src="chain.jpg" />
                                 <div className='title'>Chain</div>
                                 <div className="prepare_wave">
                                     <div className='wave -one'></div>
@@ -298,366 +314,380 @@ const stepsWaifuDetail = [
     },
     {
         selector: '#bidcont',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">In here, you can see her picture, her name and her bio. Too bad her sizes don’t appear, but I’m sure you already know them.</div>
-                        <a class="blog-slider__button" onClick={() => goTo(2)}>Me? No way…</a>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">In here, you can see her picture, her name and her bio. Too bad her sizes don’t appear, but I’m sure you already know them.</div>
+                            <a class="blog-slider__button" onClick={() => goTo(2)}>Me? No way…</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         ),
     },
     {
         selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">Oh? Whats this?</div>
-                        <a class="blog-slider__button" onClick={() => goTo(3)}>Is this..?</a>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">Oh? Whats this?</div>
+                            <a class="blog-slider__button" onClick={() => goTo(3)}>Is this..?</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         ),
     },
     {
         selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">Yes, this is where you can bid and get your waifus. Yay!</div>
-                        <a class="blog-slider__button" onClick={() => goTo(4)}>Cool!</a>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">Yes, this is where you can bid and get your waifus. Yay!</div>
+                            <a class="blog-slider__button" onClick={() => goTo(4)}>Cool!</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         ),
     },
     {
         selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">This Auction is called a “Blind Auction”. As I don’t want to bore you and make this tutorial super long, I’ll only explain the basics.</div>
-                        <a class="blog-slider__button" onClick={() => goTo(5)}>Yes, please.</a>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">This Auction is called a “Blind Auction”. As I don’t want to bore you and make this tutorial super long, I’ll only explain the basics.</div>
+                            <a class="blog-slider__button" onClick={() => goTo(5)}>Yes, please.</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         ),
     },
     {
         selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">The complex stuff is all in the FAQ. You are welcome.</div>
-                        <a class="blog-slider__button" onClick={() => goTo(6)}>Thanks!</a>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">The complex stuff is all in the FAQ. You are welcome.</div>
+                            <a class="blog-slider__button" onClick={() => goTo(6)}>Thanks!</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         ),
     },
     {
         selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">So, in the Blind Action, your bid, and the bid of the other users, are a complete secret.</div>
-                        <a class="blog-slider__button" onClick={() => goTo(7)}>*gasp*</a>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">So, in the Blind Auction, your bid, and the bid of the other users, are a complete secret.</div>
+                            <a class="blog-slider__button" onClick={() => goTo(7)}>*gasp*</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         ),
     },
     {
         selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">To assure that privacy, two bids are done:</div>
-                        <a class="blog-slider__button" onClick={() => goTo(8)}>...</a>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">To assure that privacy, two bids are done:</div>
+                            <a class="blog-slider__button" onClick={() => goTo(8)}>...</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         ),
     },
     {
         selector: '#bidreal',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">One “real”</div>
-                        <a class="blog-slider__button" onClick={() => goTo(9)}>...</a>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">One “real”</div>
+                            <a class="blog-slider__button" onClick={() => goTo(9)}>...</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         ),
     },
     {
         selector: '#bidfake',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">And another one “fake”</div>
-                        <a class="blog-slider__button" onClick={() => goTo(10)}>...</a>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">And another one “fake”</div>
+                            <a class="blog-slider__button" onClick={() => goTo(10)}>...</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         ),
     },
     {
         selector: '#bidtimer',
-        content: ({ goTo, inDOM }) => (
+        content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">Here you have the timer until the Auction finishes.</div>
-                        <a class="blog-slider__button" onClick={() => goTo(11)}>...</a>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">Here you have the timer until the Auction finishes.</div>
+                            <a class="blog-slider__button" onClick={() => goTo(11)}>...</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        ),
-    },
-    {
-        selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
-            <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">IMPORTANT: The fake bid has to be bigger than the real bid.</div>
-                        <a class="blog-slider__button" onClick={() => goTo(12)}>Noted.</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        ),
-    },
-    {
-        selector: '#bidpanel',
-        content: ({ goTo, inDOM }) => (
-            <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">ALSO IMPORTANT: Once the bid has been done, you have to return here tomorrow to do the “Reveal”.</div>
-                        <a class="blog-slider__button" onClick={() => goTo(13)}>Also noted.</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         ),
     },
     {
         selector: '#bidpanel',
         content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">I don’t like spoilers, so that part will have to wait until you have done your first bid!</div>
-                        <a class="blog-slider__button" onClick={() => close()}>Alright.</a>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">IMPORTANT: The fake bid has to be bigger than the real bid.</div>
+                            <a class="blog-slider__button" onClick={() => goTo(12)}>Noted.</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         ),
     },
     {
         selector: '#bidpanel',
         content: ({ close, goTo, inDOM }) => (
             <div className="blog-slider">
-            <div className="blog-slider__wrp swiper-wrapper">
-                <div className="blog-slider__item swiper-slide">
-                    <div className="blog-slider__img">
-                        <div className='box'>
-                           <img src="chain.jpg" />
-                            <div className='title'>Chain</div>
-                            <div className="prepare_wave">
-                                <div className='wave -one'></div>
-                                <div className='wave -two'></div>
-                                <div className='wave -three'></div>
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="blog-slider__content">
-                        <div class="blog-slider__text" id="dialog">See you soon!</div>
-                        <a class="blog-slider__button" onClick={() => close()}>See ya!</a>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">ALSO IMPORTANT: Once the bid has been done, you have to return here tomorrow to do the “Reveal”.</div>
+                            <a class="blog-slider__button" onClick={() => goTo(13)}>Also noted.</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        ),
+    },
+    {
+        selector: '#bidpanel',
+        content: ({ close, goTo, inDOM }) => (
+            <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">I don’t like spoilers, so that part will have to wait until you have done your first bid!</div>
+                            <a class="blog-slider__button" onClick={() => close()}>Alright.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ),
+    },
+    {
+        selector: '#bidpanel',
+        content: ({ close, goTo, inDOM }) => (
+            <div className="blog-slider">
+                <a class="close-thik" onClick={()=>{Tools.disableTutorial('bid');close();}}>✖</a>
+                <div className="blog-slider__wrp swiper-wrapper">
+                    <div className="blog-slider__item swiper-slide">
+                        <div className="blog-slider__img">
+                            <div className='box'>
+                                <img src="chain.jpg" />
+                                <div className='title'>Chain</div>
+                                <div className="prepare_wave">
+                                    <div className='wave -one'></div>
+                                    <div className='wave -two'></div>
+                                    <div className='wave -three'></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-slider__content">
+                            <div class="blog-slider__text" id="dialog">See you soon!</div>
+                            <a class="blog-slider__button" onClick={() => close()}>See ya!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         ),
     },
 ]

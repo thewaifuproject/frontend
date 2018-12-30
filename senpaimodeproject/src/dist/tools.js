@@ -90,10 +90,11 @@ export function checkTutorial(n){
     
 }
 
-export function disableTurorial(n){
+export function disableTutorial(n){
     let wchainStorage = getLocalStorage()
     if (wchainStorage) {
         wchainStorage['tutorial'][n]=false
+        console.log(n)
         window.localStorage.setItem('waifuchain', JSON.stringify(wchainStorage));
     } else {
         //TODO: CHECK before bid if window.localStorage is accesible

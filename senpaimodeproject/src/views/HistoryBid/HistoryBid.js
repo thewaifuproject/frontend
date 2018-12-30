@@ -10,7 +10,7 @@ import * as Api from '../../dist/api'
 import * as Tools from '../../dist/tools'
 
 function getBidHistory(){
-    var log = JSON.parse(localStorage.getItem("waifuchain"))
+    var log = Tools.getLocalStorage()
     if (log==null)
         return null
     else
@@ -86,7 +86,7 @@ class HistoryBid extends Component {
 
     closeTour(){
         this.setState({isTourOpen:false})
-        Tools.disableTurorial((!this.state.doneReveal) ? 'beforeReveal' : 'afterReveal');
+        Tools.disableTutorial((!this.state.doneReveal) ? 'beforeReveal' : 'afterReveal');
     }
 
     setown(){

@@ -161,7 +161,7 @@ function revealAll(startTutorialDone){
     })
 }
 
-function setProfile(waifuId, network, username){
+function setWaifuProfile(waifuId, network, username){
     let profile;
     let normalizedUsername=username.trim().replace(/^@+/gm,'');
     getAccount((account)=>{
@@ -276,7 +276,6 @@ function withdraw(){
             .methods
             .withdraw()
             .send({from: account})
-            .then(()=> console.log('ok'))
     })
 }
 
@@ -293,5 +292,6 @@ export {
     checkWeb3,
     checkNetwork,
     sendWaifu,
-    withdraw
+    withdraw,
+    setWaifuProfile
  };
