@@ -6,7 +6,7 @@ class WaifuMarket extends Component {
 
     render() {
 
-        return <a id="trademarket" href="https://opensea.io">Visit https://opensea.io to buy waifus which are not in auction</a>
+        return <iframe src='https://rinkeby.opensea.io/category/waifuchainv3?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe>
     }
 
 }

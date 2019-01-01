@@ -24,6 +24,11 @@ export default {
       icon: 'icon-graph',
     },
     {
+      name: 'Market',
+      url: '/market',
+      icon: 'icon-graph',
+    },
+    {
       title: true,
       name: 'Me',
       wrapper: {

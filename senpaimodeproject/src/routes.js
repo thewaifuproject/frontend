@@ -91,7 +91,7 @@ const routes = [
   { path: '/auction', exact: true, name: 'Auction', component: Auction },
   { path: '/waifus/:id', exact: true, name: 'Waifu Details', component: WaifuDetails },
   { path: '/waifushistory', exact: true, name: 'Auctions history', component: AuctionsHistory },
-  { path: '/waifumarket', exact: true, name: 'WaifuMarket', component: WaifuMarket },
+  { path: '/market', exact: true, name: 'Market', component: WaifuMarket },
   { path: '/historybid', exact: true, name: 'HistoryBid', component: HistoryBid },
   { path: '/roadmap', exact: true, name: 'Roadmap', component: Roadmap },
   { path: '/wallet', exact: true, name: 'MyWaifus', component: MyWaifus },

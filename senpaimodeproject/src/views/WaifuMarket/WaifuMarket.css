@@ -1,0 +1,10 @@
+.container-fluid{
+    margin: 0;
+    height: 100%;
+    border: 0;
+    overflow:hidden;
+}
+
+.main .container-fluid{
+	padding:0;
+}
