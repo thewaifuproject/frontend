@@ -155,7 +155,7 @@ class BidPanel extends Component {
                     <Row className="countdown-row">
                       <Col>
                       <Alert color="danger" isOpen={this.state.alert} toggle={this.onDismissAlert}>
-                        {(!this.state.web3)?<div class="alert-link">No wallet has been detected, install MetaMask to continue<br/><br/><a href="https://metamask.io" target="__blank"><img src="/download-metamask.png" width="100%"/></a></div>:this.state.alertText} 
+                        {(!this.state.web3)?<div class="alert-link">No wallet has been detected, install MetaMask to continue<br/><br/><a href="https://metamask.io" target="__blank"><img src="download-metamask.png" width="100%"/></a></div>:this.state.alertText} 
                       </Alert>
                       </Col>
                     </Row>
