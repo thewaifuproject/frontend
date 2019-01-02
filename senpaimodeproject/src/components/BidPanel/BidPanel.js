@@ -90,6 +90,9 @@ class BidPanel extends Component {
         if (!net){
           this.setState({ alertText: <div>Oops! You are not in the correct network, change the network to Rinkeby.<br/><br/><img src="https://waifuchain.moe/images/rinkeby.gif" /></div> });
           this.setState({ alert: true })
+        } else if (this.state.realBidValue==undefined || this.state.fakeBidValue==undefined){
+          this.setState({ alertText: "Please enter a real and a fake bid by filling the respective fields." });
+          this.setState({ alert: true });
         } else if (parseInt(this.state.realBidValue)>parseInt(this.state.fakeBidValue)){
           this.setState({ alertText: "Fake bid must be greater or equal than real bid." });
           this.setState({ alert: true });
