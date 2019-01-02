@@ -94,11 +94,20 @@ class BidPanel extends Component {
           this.setState({ alertText: "Fake bid must be greater or equal than real bid." });
           this.setState({ alert: true });
         } else {
-          Api.startBid(this.props.wid, this.state.realBidValue, this.state.fakeBidValue, (logged) => this.setState({ alert:logged, alertText: "You are not logged in in Metamask!"}),
+		Api.getFunds().
+			then((funds)=>{
+				if(Number(funds)==0){
+          this.setState({ alertText: <div>Your wallet is empty, head over <a href="https://www.rinkeby.io/#faucet" class="alert-link">the Rinkeby faucet</a> and follow the instructions there to get some money.</div> });
+          this.setState({ alert: true });
+				} else {
+          Api.startBid(this.props.wid, this.state.realBidValue, this.state.fakeBidValue, (logged) => this.setState({ alert:logged, alertText: "You are not logged in Metamask!"}),
           ()=>{
             Tools.disableTutorial('bid');
           })
-        }
+				}
+				
+        })
+	}
       })
     }
   }

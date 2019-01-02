@@ -71,6 +71,15 @@ function startBid(waifuId, etherReal, etherFake, logged, disableBid){
         })
 }
 
+function getFunds(){
+    return web3.eth.getAccounts()
+        .then((accounts)=>{
+            if (accounts.length){
+		return web3.eth.getBalance(accounts[0])
+	    }
+	})
+}
+
 function bid(account, waifuId, etherReal, etherFake){
     var secreto = web3.utils.randomHex(32);
     myContract
@@ -292,6 +301,7 @@ export {
     getWaifus,
     getAccount,
     startBid,
+    getFunds,
     revealAll,
     highestBidderByIDs,
     claimWaifu,
