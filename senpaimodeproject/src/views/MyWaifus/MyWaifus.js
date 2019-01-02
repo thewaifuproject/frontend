@@ -37,7 +37,7 @@ class MyWaifus extends Component {
     
     componentDidMount(){
     if (!Api.checkWeb3()){
-      this.setState({ errorMsg: <div class="text-center alert-link">No wallet has been detected, install MetaMask to continue<br/><br/><a href="https://metamask.io" target="__blank"><img src="download-metamask.png"/></a></div>});
+      this.setState({ errorMsg: <div class="text-center alert-link">No wallet has been detected, install MetaMask to continue<br/><br/><a href="https://metamask.io" target="__blank"><img src="download-metamask.png" width="100%"/></a></div>});
       this.setState({ error: true });
     } else {
       Api.checkNetwork((net)=>{
