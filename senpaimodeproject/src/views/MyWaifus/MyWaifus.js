@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Fade, Container, Table, Row, Col } from 'reactstrap';
+import { Alert, Fade, Container, Table, Row, Col } from 'reactstrap';
 import WaifuCard from '../../components/WaifuCard/WaifuCard'
 
 import './MyWaifus.css'
@@ -29,17 +29,39 @@ class MyWaifus extends Component {
             timeout: 300,
             idswaifus: [],
             defopen:true,
-            open:true
+            open:true,
+		error:false,
+		errorMsg:""
         };
     }
     
     componentDidMount(){
-        Api.getWaifusByAddr((waifuIndex)=>{
+    if (!Api.checkWeb3()){
+      this.setState({ errorMsg: <div class="text-center alert-link">No wallet has been detected, install MetaMask to continue<br/><br/><a href="https://metamask.io" target="__blank"><img src="/download-metamask.png"/></a></div>});
+      this.setState({ error: true });
+    } else {
+      Api.checkNetwork((net)=>{
+        if (!net){
+          this.setState({ errorMsg: <div class="text-center alert-link">Oops! You are not in the correct network, change the network to Rinkeby.<br/><br/><img src="https://waifuchain.moe/images/rinkeby.gif" /></div> });
+          this.setState({ error: true })
+        } else {
+ 
+        Api.getWaifusByAddr((err, waifuIndex)=>{
+		if(err){
+          this.setState({ errorMsg: <div class="text-center alert-link">You're not logged in MetaMask</div>})
+          this.setState({ error: true })
+		}
+		else{
+
             this.setState({
                 idswaifus:this.state.idswaifus.concat(parseInt(waifuIndex))
             })
             console.log(waifuIndex)
+		}
         })
+    }
+      })
+    }
     }
 
     toggle() {
@@ -58,7 +80,7 @@ class MyWaifus extends Component {
             <Fade timeout={this.state.timeout} in={this.state.fadeIn}>
                 <Container className="content-container">
                     
-                        {myWaifus(this.state.idswaifus)}
+                        {this.state.error?<Alert color="danger">{this.state.errorMsg}</Alert>:myWaifus(this.state.idswaifus)}
                     
                 </Container>
             </Fade>

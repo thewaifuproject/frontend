@@ -169,7 +169,7 @@ class HistoryBid extends Component {
             <div className="animated fadeIn">
             <Fade timeout={this.state.timeout} in={this.state.fadeIn}>
                 <Container className="content-container">
-                    <h1>History bid</h1>
+                    <h1>Bid history</h1>
                     <Table hover responsive className="tablestyle">
                         <thead>
                             <tr>

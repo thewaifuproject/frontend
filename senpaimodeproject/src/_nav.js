@@ -10,7 +10,7 @@ export default {
       class: ''             // optional class names space delimited list for title item ex: "text-center"
     },
     {
-      name: 'Auction',
+      name: 'Auctions',
       url: '/auction',
       icon: 'icon-graph',
       badge: {
@@ -19,7 +19,7 @@ export default {
       },
     },
     {
-      name: 'Waifus released',
+      name: 'Released waifus',
       url: '/waifushistory',
       icon: 'icon-graph',
     },
@@ -30,7 +30,7 @@ export default {
     },
     {
       title: true,
-      name: 'Me',
+      name: 'Wallet',
       wrapper: {
         element: '',
         attributes: {},
@@ -42,7 +42,7 @@ export default {
       icon: 'icon-lock',
     },
     {
-      name: 'History bid',
+      name: 'Bid history',
       url: '/historybid',
       icon: 'icon-lock',
     },
@@ -64,10 +64,6 @@ export default {
       url: '/icons',
       icon: 'icon-magnifier',
       children: [
-        {
-          name: 'MetaMask Tutorial',
-          url: 'https://waifuchain.moe/tutorial'
-        },
         {
           name: 'Waifu Wiki',
           url: 'https://waifu.wiki',

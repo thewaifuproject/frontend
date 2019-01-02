@@ -18,10 +18,14 @@ function getCreationTime() {
 }
 
 function getAccount(cback) {
+	if(web3){
     web3.eth.getAccounts()
         .then((accounts)=>{
             cback(accounts[0])
         })
+	} else {
+		cback(undefined)
+	}
 }
 
 /**    Api.getAccount((account)=>{
@@ -228,6 +232,7 @@ function claimWaifu(id){
 function getWaifusByAddr(setWaifu){
     getAccount((account)=>{
         if (account)
+	    {
         myContract
         .methods
         .balanceOf(account)
@@ -240,10 +245,14 @@ function getWaifusByAddr(setWaifu){
                     .tokenOfOwnerByIndex(account, i)
                     .call()
                     .then((waifuIndex) => {
-                        setWaifu(waifuIndex)
+                        setWaifu(false, waifuIndex)
                     })
             }
         })
+	    } else {
+		    setWaifu(true)
+	    }
+
     })
     
 }
