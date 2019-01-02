@@ -88,7 +88,7 @@ class BidPanel extends Component {
     } else {
       Api.checkNetwork((net)=>{
         if (!net){
-          this.setState({ alertText: "Oops! You are not in the correct network, change the network to Rinkeby. (In the metamask extension, top selector)" });
+          this.setState({ alertText: <div>Oops! You are not in the correct network, change the network to Rinkeby.<br/><br/><img src="https://waifuchain.moe/images/rinkeby.gif" /></div> });
           this.setState({ alert: true })
         } else if (parseInt(this.state.realBidValue)>parseInt(this.state.fakeBidValue)){
           this.setState({ alertText: "Fake bid must be greater or equal than real bid." });
