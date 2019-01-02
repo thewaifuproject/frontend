@@ -5,15 +5,13 @@ import {getLocalStorage} from './tools'
 const creationTimeString = "1543902712";
 
 let web3
+let myContract
 
 if (typeof window.web3 !== 'undefined') {
     web3 = new Web3(window.web3.currentProvider);
-} else {
-// set the provider you want from Web3.providers
-    web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    myContract = new web3.eth.Contract(contract.ABI, contract.contractAddress)
 }
 
-const myContract = new web3.eth.Contract(contract.ABI, contract.contractAddress)
 
 function getCreationTime() {
     return Number(creationTimeString);
