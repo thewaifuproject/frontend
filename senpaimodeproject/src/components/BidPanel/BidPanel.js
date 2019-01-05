@@ -100,7 +100,7 @@ class BidPanel extends Component {
 		Api.getFunds().
 			then((funds)=>{
 				if(Number(funds)==0){
-          this.setState({ alertText: <div>Your wallet is empty, head over <a href="https://www.rinkeby.io/#faucet" class="alert-link">the Rinkeby faucet</a> and follow the instructions there to get some money.</div> });
+          this.setState({ alertText: <div>Your wallet is empty, click <a href="https://www.rinkeby.io/#faucet">here</a> to go to the Rinkeby faucet, then follow the instructions there to get some money.</div> });
           this.setState({ alert: true });
 				} else {
           Api.startBid(this.props.wid, this.state.realBidValue, this.state.fakeBidValue, (logged) => this.setState({ alert:logged, alertText: "You are not logged in Metamask!"}),
