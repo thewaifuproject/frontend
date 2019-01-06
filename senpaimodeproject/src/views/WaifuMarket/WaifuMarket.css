@@ -1,14 +1,9 @@
-.container-fluid{
-    margin: 0;
+.main-container.container-fluid.market{
+    margin: 0 !important;
     height: 100%;
     border: 0;
     overflow:hidden;
+padding:0 !important;
 }
 
-.main .container-fluid{
-	padding:0;
-}
 
-.main-container{
-	margin:0;
-}
