@@ -2,7 +2,7 @@
 
 .fixedH-auction {
     object-fit: cover;
-    object-position: center;
+    object-position: top;
     height: 15rem;
 }
 
